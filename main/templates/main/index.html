@@ -20,6 +20,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/farm-03.png">
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/farm-o3.png">
   <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <link href="assets/css/theme.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&family=Roboto:wght@100;500&display=swap"
@@ -30,14 +31,36 @@
   <!-- ===============================================-->
   <!--    Stylesheets-->
   <!-- ===============================================-->
-  <link href="assets/css/theme.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- ===============================================-->
   <!--    Main Content-->
   <!-- ===============================================-->
+
+ 
+
+
+
+
   <main class="main" id="top">
+
+
+
+     <!-- The Modal -->
+<div id="mainModal" style = 'z-index:30 !important;' class="w3-modal w3-animate-top">
+  <div class="w3-modal-content"  style = 'z-index:30 !important;'>
+    <div class="w3-container w3-green " style = 'z-index:30 !important;'>
+      <span onclick="document.getElementById('mainModal').style.display='none'"
+      class="w3-button w3-display-topright">&times;</span>
+      <p style = 'color:yellow;font-weight:normal;font-size:1.5rem;padding:20px;text-align:left;'> 
+        Hello, the feature you selected is coming soon, please bear with us.</p>
+      
+    </div>
+  </div>
+</div>
+
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-light opacity-85"
       data-navbar-on-scroll="data-navbar-on-scroll">
       <div class="container"><a class="navbar-brand" href="{{host}}"><img class="d-inline-block align-top "
@@ -48,9 +71,9 @@
             class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mx-4 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page" href="#header"
-                style='font-weight:bolder;text-shadow:1px 1px 1px green;font-family:Raleway;font-size:1.75rem;color:green'>
-                Token Offering </a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page"  onclick = "document.getElementById('mainModal').style.display = 'block'"
+                style='font-weight:bolder;text-shadow:1px 1px 1px green;font-family:Raleway;font-size:1.75rem;color:green;cursor:pointer'>
+                Voting </a></li>
             <li class="nav-item px-2"><a style='font-weight:bolder;font-family:Raleway;text-shadow:1px 1px 1px green;font-size:1.75rem;color:green'
                 class="nav-link fw-medium" href="#Opportuanities"> Tokenomics </a></li>
             <li class="nav-item px-2"><a style='font-weight:bolder;font-family:Raleway;font-size:1.75rem;text-shadow:1px 1px 1px green;color:green'
@@ -58,7 +81,7 @@
             <li class="nav-item px-2"><a a style='font-weight:bolder;font-family:Raleway;font-size:1.75rem;text-shadow:1px 1px 1px green;color:green' class="nav-link fw-medium" href="#invest">  Presale </a></li>
             <!-- <li class="nav-item px-2"><a class="nav-link fw-medium" href="#road">Road Map </a></li> -->
           </ul>
-          <form class="d-flex"><button class="btn btn-lg btn-dark bg-gradient order-0" type="submit">BUY</button></form>
+          <form class="d-flex"><button style = 'background-color:green;color:white' class="btn btn-lg  bg-gradient order-0" type="submit">Buy CHILI </button></form>
         </div>
       </div>
     </nav>
