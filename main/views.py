@@ -4,4 +4,7 @@ from django.shortcuts import render
 def IndexView(request):
     return render( request, 'main/index.html')
 
+def TokenomicsView(request):
+    return render( request, 'main/tokenomics.html')
+
     
