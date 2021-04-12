@@ -28,7 +28,7 @@ SECRET_KEY = '9ux40014om!9^a%82&xu4nl1u$3z-r34vpf10510^(+)g88k0@'
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    'localhost:8000',
+    'localhost',
     '127.0.0.1:8000',
     'farmfinance.herokuapp.com',
     'farmfinance.trade',
