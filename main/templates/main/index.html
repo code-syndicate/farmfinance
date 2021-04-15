@@ -1,247 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-<base href="/static/main/">
+  <base href="/static/main/" >
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- ===============================================-->
-  <!--    Document Title-->
-  <!-- ===============================================-->
-  <title>Farm Finance</title>
-
-  <!-- ===============================================-->
-  <!--    Favicons-->
-  <!-- ===============================================-->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/farm-03.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/farm-03.png">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/farm-o3.png">
-  <link rel="manifest" href="assets/img/favicons/manifest.json">
-  <link href="assets/css/theme.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&family=Roboto:wght@100;500&display=swap"
-    rel="stylesheet">
-  <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- ===============================================-->
-  <!--    Stylesheets-->
-  <!-- ===============================================-->
-</head>
-
-<body>
-  <!-- ===============================================-->
-  <!--    Main Content-->
-  <!-- ===============================================-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Farm Finance</title>
 
 
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
 
 
-  <main class="main" id="top">
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+  </head>
 
 
+  <body>
 
-    <!-- The Modal -->
-    <div id="mainModal" style='z-index:30 !important;' class="w3-modal w3-animate-top">
-      <div class="w3-modal-content" style='z-index:30 !important;'>
-        <div class="w3-container w3-green " style='z-index:30 !important;'>
-          <span onclick="document.getElementById('mainModal').style.display='none'"
-            class="w3-button w3-display-topright">&times;</span>
-          <p style='color:yellow;font-weight:normal;font-size:1.5rem;padding:20px;text-align:left;'>
-            Hello, the feature you selected is coming soon, please bear with us.</p>
-
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-light opacity-85"
-      data-navbar-on-scroll="data-navbar-on-scroll">
-      <div class="container"><a class="navbar-brand" href="{{host}}"><img class="d-inline-block align-top "
-            src="assets/img/farm-02.png" alt="" height='100' width="280" /><span style='font-weight:bolder'
-            class="text-theme font-monospace fs-4 ps-2"></span></a><button class="navbar-toggler collapsed"
-          type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse border-top border-lg-0 mx-4 mt-4 mt-lg-0" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page"
-                onclick="document.getElementById('mainModal').style.display = 'block'"
-                style='font-weight:bolder;text-shadow:1px 1px 1px green;font-family:Raleway;font-size:1.75rem;color:green;cursor:pointer'>
-                Voting </a></li>
-            <li class="nav-item px-2"><a
-                style='font-weight:bolder;font-family:Raleway;text-shadow:1px 1px 1px green;font-size:1.75rem;color:green'
-                class="nav-link fw-medium" href="{% url 'main:tokenomics' %}"> Tokenomics </a></li>
-            <li class="nav-item px-2"><a
-                style='font-weight:bolder;font-family:Raleway;font-size:1.75rem;text-shadow:1px 1px 1px green;color:green'
-                class="nav-link fw-medium" href="#road"> FarmPaper </a></li>
-            <li class="nav-item px-2"><a a
-                style='font-weight:bolder;font-family:Raleway;font-size:1.75rem;text-shadow:1px 1px 1px green;color:green'
-                class="nav-link fw-medium" href="#invest"> Token Sale </a></li>
-            <!-- <li class="nav-item px-2"><a class="nav-link fw-medium" href="#road">Road Map </a></li> -->
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/icons/logo.png"  alt="" /></a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ms-lg-4 ms-xl-7 border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
+              <li class="nav-item"><a class="nav-link fw-bold active" aria-current="page" href="http://{{host}}#abt">About</a></li>
+              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#rdm">RoadMap</a></li>
+              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#fet">Features</a></li>
+              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}/tokenomics">Token</a></li>
+              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#tk">FarmPaper</a></li>
           </ul>
-          <form class="d-flex"><button style='background-color:green;color:white'
-              class="btn btn-lg  bg-gradient order-0" type="submit">Buy Farm </button></form>
+            <form class="d-flex py-3 py-lg-0"><a class="btn btn-light rounded-pill shadow fw-bold" href="http://{{host}}" role="button">Buy FAFI Now
+                <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                </svg></a></form>
+          </div>
         </div>
-      </div>
-    </nav>
-
-    {% block main %}
-
-    <section class="py-0" id="header">
-      <div class="bg-holder d-none d-md-block"
-        style="background-image:url(assets/img/illustrations/hero-header.png);background-position:right top;background-size:contain;">
-      </div>
-      <!--/.bg-holder-->
-      <div class="bg-holder d-md-none"
-        style="background-image:url(assets/img/illustrations/hero-bg.png);background-position:right top;background-size:contain;">
-      </div>
-      <!--/.bg-holder-->
+      </nav>
 
 
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-5 bg">
 
-      <div class="container">
-        <div class="row align-items-center min-vh-75 min-vh-lg-100">
-          <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
-            <h1
-              style='text-align: left;color:green;width:100%;font-size:2.5rem;text-transform: capitalize;font-family: "Times New Roman", Times, serif;font-weight:bolder'
-              class="mt-6 mb-sm-4  lh-sm  ">
-              An All In One Decentralized Solution Provider For <span style='color:midnightblue'> DEFI </span> On
-              BINANCE SMARTCHAIN <br class="d-block d-lg-block" /></h1>
-            <p class=" "
-              style='font-family:monospace;color:rgb(7, 5, 5);font-size:1.5rem !important;text-transform: capitalize;'>
-
-              A massive and unexploited potential came with the arrival of the binance smartchain in the DEFI
-              ecosystem.This potential is however
-              being overshadowed by rugs and other messy affairs.
-              Join our community today and help contribute to keep DEFI safe and secure on BSC.
-            </p>
-            <!-- <a style='background-color:rgb(12, 163, 12);color:white' class="btn btn-lg " href="#" role="button">Buy -->
-
-            <br><br>
-            <div class="w3-container w3-bar">
-              <div> <button id='b1' onclick='changeContent(1);'
-                  style='font-size: 2rem;font-family: Raleway; display:inline-block;font-weight: bold; width:40%;background-color: green;color:white'
-                  class="w3-round-medium w3-bar-item "> FarmYard</button>
-                <button id='b2' onclick='changeContent(2)'
-                  style='font-size:2rem;font-family:Raleway;display: inline-block;margin-left:20px;font-weight: bold; width:40%;background-color: green;color:white'
-                  class="w3-bar-item w3-round-medium "> FarmSwap </button>
-              </div>
-              <br><br>
-              <div style='padding:20px 20px 20px 20px;' class=" w3-padding-32 w3-round-medium">
-
-                <span style='font-size:1.75rem;display:none;' class='w3-animate-opacity' id='content1'>
-                  FarmYard will work as a startup incubator and launchpad for the new startups,which means it has high
-                  potentials to
-                  bring in new technology to the DEFI Bsc community.  <small style='color:rgb(240, 240, 8);font-size: 1rem;'> Coming Soon </small>
-                </span>
-                <span style='font-size:1.75rem;' class='w3-animate-opacity' id='content2'> A decentralized exchange
-                  platform where projects can list
-                  their tokens <small style='color:rgb(240, 240, 8);font-size: 1rem;'> Coming Soon </small>
-                </span>
-
-
-
-              </div>
-
-
-              <script>
-                function changeContent(bit) {
-                  // alert('helo');
-                  d1 = document.getElementById('content1');
-                  d2 = document.getElementById('content2');
-                  b1 = document.getElementById('b1');
-                  b2 = document.getElementById('b2');
-
-                  if (bit === 1) {
-                    d1.style.display = 'none';
-                    d2.style.display = 'block';
-                    b1.style.backgroundColor = 'green';
-                    b2.style.backgroundColor = 'grey';
-                  } else if (bit === 2) {
-                    d1.style.display = 'block';
-                    d2.style.display = 'none';
-
-                    b1.style.backgroundColor = 'grey';
-                    b2.style.backgroundColor = 'green';
-                  }
-                }
-              </script>
-
-
+        <div class="container" id="abt">
+          <div class="row align-items-center">
+            <div class="col-md-5 col-lg-7 order-md-1 pt-8" ><img class="img-fluid" src="" alt="" /></div>
+            <div class="col-md-7 col-lg-5 text-center text-md-start pt-5 pt-md-9">
+              <h1 class="mb-4 display-2 fw-bold">Farm <br class="d-block d-lg-none d-xl-block" />Finance.</h1>
+              <p class="mt-3 mb-4">An all in one truly Decentralized solution providing ecosystem for DeFi products and Projects on the Binance Smart chain.</p><a class="btn btn-lg btn-info rounded-pill" href="#" role="button">Our Projects</a>
             </div>
-
-
           </div>
         </div>
-      </div>
-    </section>
-    <section class="py-5" id="Opportuanities">
-      <div class="bg-holder d-none d-sm-block"
-        style="background-image:url(assets/img/illustrations/bg.png);background-position:top left;background-size:225px 755px;margin-top:-17.5rem;">
-      </div>
-      <!--/.bg-holder-->
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9 mx-auto text-center mb-3">
-            <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Features</h5>
-            <p class="mb-5"></p>
-          </div>
-        </div>
-        <div class="row flex-center h-100">
-          <div class="col-xl-9">
-            <div class="row">
-              <div class="col-md-4 mb-5">
-                <div class=" w3-center card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
-                  <div class="text-center text-md-start card-hover"><img style='display:block;margin:auto'
-                      class=" ps-3 icons" src="assets/img/icons/farmer.svg" height="60" alt="" />
-                    <div class="card-body">
-                      <h6 class="fw-bold fs-1 heading-color w3-center">A Truly Decentralized Community </h6>
-                      <p class="mt-3 mb-md-0 mb-lg-2"> With major decisions and projects being voted and decided solely
-                        by the community, There
-                        is no central authority to make or influence decisons.
-                        Hold Farm, Cast your VOTE and let your voices be heard.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-5">
-                <div class="w3-center card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
-                  <div class="text-center text-md-start card-hover"><img style='display:block;margin:auto'
-                      class="w3-center ps-3 icons" src="assets/img/icons/growth.svg" height="60" alt="" />
-                    <div class="card-body">
-                      <h6 class="fw-bold fs-1 heading-color w3-center">Low Transaction Fee </h6>
-                      <p class="mt-3 mb-md-0 mb-lg-2"> Gas fees on the ethereum blockchain has caused a major problem to
-                        projects, new and old on
-                        the platform, making projects lose users.The Binance smartchain has offered opportunities for
-                        DEFI to thrive again with low
-                        transaction fees.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-5">
-                <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
-                  <div class="text-center text-md-start card-hover"><img style='display:block;margin:auto'
-                      class="ps-3 icons" src="assets/img/icons/planting.svg" height="60" alt="" />
-                    <div class="card-body">
-                      <h6 class="fw-bold fs-1 heading-color w3-center"> Farm (The Token) </h6>
-                      <p class="mt-3 mb-md-0 mb-lg-2">
-                        Farm is the utility token of the farm fiance ecosystem with its first use deployed on our
-                        products.It will be used for charges, staking and rewards,voting amongst others on
-                        our ecosystem by holders.It is the first MVP of the ecosystem to be launched.
-                      </p>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-4">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="card mb-3 bg-soft-danger rounded-3">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5 col-lg-6 text-md-center"><img class="img-fluid" src="assets/img/compp.jpeg" alt="" /></div>
+                  <div class="col-md-7 col-lg-6 px-md-2 px-xl-6 text-center text-md-start">
+                    <div class="card-body px-4 py-5 p-lg-3 p-md-4">
+                      <h1 class="mb-4 fw-bold">A truly Decentralized ecosytem to Safeguard DeFi on the Binance Smart Chain <br class="d-md-none d-xxl-block" /></h1>
+                      <p class="card-text">A huge potential came with the arrival of the Binance Smart Chain. This potential is however being overshadowed by a lot of messy affairs, with Rugs and Pulls being the most challenging of all.As a DeFi ecosytem our job at Farm Finance is to keep the Binance Smart Chain as safe as possible for all, both new and existing projects and their investors or users.</p>
                     </div>
                   </div>
                 </div>
@@ -249,150 +103,121 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        <!-- end of .container-->
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="py-5" id="invest">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-9 mb-3">
-            <!-- <div class="row">
-              <div class="col-lg-9 mb-3">
-                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Invest on your convenience</h5>
-                <p class="mb-5">Autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                  consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla</p>
-              </div>
-              <div class="col-md-6 mb-5">
-                <div class="card text-white"><img class="card-img" src="assets/img/gallery/short-terms.png" alt="..." />
-                  <div
-                    class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 bg-dark-gradient">
-                    <h6 class="text-success pt-2">NEW FARM TODAY</h6>
-                    <hr class="text-white" style="height:0.12rem;width:2.813rem" />
-                    <div class="pt-lg-3">
-                      <h6 class="fw-bold text-white fs-1 fs-md-2 fs-lg-3 w-xxl-50">Short terms investment</h6>
-                      <p class="w-xxl-75">Invest in farms that will be ready for harvest in 3-18 months</p><button
-                        class="btn btn-lg btn-light text-success" type="button">Browse Farm</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-5">
-                <div class="card text-white"><img class="card-img" src="assets/img/gallery/fully-funded.png"
-                    alt="..." />
-                  <div
-                    class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 bg-light-gradient">
-                    <h6 class="text-success pt-2">FULLY FUNDED</h6>
-                    <hr class="text-white" style="height:0.12rem;width:2.813rem" />
-                    <div class="pt-lg-3">
-                      <h6 class="fw-bold text-white fs-1 fs-md-2 fs-lg-3 w-xxl-50">Long terms investment</h6>
-                      <p class="w-xxl-75">Consider farms that have long term investment program.</p><button
-                        class="btn btn-lg btn-light text-success" type="button">Learn More</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <section class="py-6">
+        <div class="container-lg">
+          <div class="row flex-center mb-5">
+            <div class="col-auto text-center my-4">
+              <h1 class="mb-4 fw-bold" id="fet">Features</h1>
+              <p>Some of the features and advantages that we provide for those of you <br />who use DeFi on the Binance Smart Chain.</p>
+            </div>
           </div>
-        </div>
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card px-5 px-md-3 py-lg-5">
+                <div class="row flex-center">
+                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:contain;">
+                  </div>
+                  <!--/.bg-holder-->
 
-    <section class="py-0">
-      <div class="bg-holder"
-        style="background-image:url(assets/img/illustrations/how-it-works.png);background-position:center bottom;background-size:cover;">
-      </div>
-      <!--/.bg-holder-->
-      <div class="container-lg" id="road">
-        <div class="row justify-content-center">
-          <div class="col-sm-8 col-md-9 col-xl-5 text-center pt-8">
-            <h5 class="fw-bold fs-3 fs-xxl-5 lh-sm mb-3 text-white"> Our Roadmap </h5>
-            <!-- <p class="mb-5 text-white">Take your pick from the supply chain and participate in agribusiness projects
-              that are backed up not only by Zou, but also by the best land, family heritage, innovation and overall
-              superior expertise.</p> -->
-          </div>
-          <div class="col-sm-9 col-md-12 col-xxl-9">
-            <div class="theme-tab">
-              <ul class="nav justify-content-between">
-                <li class="nav-item" role="presentation"><a class="nav-link active fw-semi-bold" href="#bootstrap-tab1"
-                    data-bs-toggle="tab" data-bs-target="#tab1" id="tab-1"><span class="nav-item-circle-parent"><span
-                        class="nav-item-circle">01</span></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab2"
-                    data-bs-toggle="tab" data-bs-target="#tab2" id="tab-2"><span class="nav-item-circle-parent"><span
-                        class="nav-item-circle">02</span></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab3"
-                    data-bs-toggle="tab" data-bs-target="#tab3" id="tab-3"><span class="nav-item-circle-parent"><span
-                        class="nav-item-circle">03</span></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab4"
-                    data-bs-toggle="tab" data-bs-target="#tab4" id="tab-4"><span class="nav-item-circle-parent"><span
-                        class="nav-item-circle">04</span></span></a></li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab-1">
-                  <div class="row align-items-center my-6 mx-auto">
-                    <div class="col-md-6 col-lg-5 offset-md-1">
-                      <h3 style='font-size:1.5rem;font-weight:light' class=" lh-base text-white">
-                        Contract deployment &check; <br>
-                        Website development &check; <br>
-                        Setting up socials &check;
-                      </h3>
-                    </div>
-                    <div class="col-md-5 text-white offset-lg-1">
-                      <!-- <p class="mb-0">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-                        soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere</p> -->
-                    </div>
+                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:cover;">
                   </div>
-                </div>
-                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab-2">
-                  <div class="row align-items-center my-6 mx-auto">
-                    <div class="col-md-6 col-lg-5 offset-md-1">
-                      <h3 style='font-size:1.5rem;font-weight:light' class=" lh-base text-white">
-                        <span style='font-weight:bolder;color:midnightblue;font-size: 1.75rem;'> Token Sale </span> <br>
-                        Private Sale <br>
-                        Presale <br>
-                        Public Sale <br>
-                      </h3>
-                    </div>
-                    <div class="col-md-5 text-white offset-lg-1">
-                      <!-- <p class="mb-0">We the farmers choose the vegetables in your share each week. A Farm Share is
-                        perfect for those who love the weekly surprise, and who look forward to cooking with inspiration
-                        from the seasons.</p> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-3">
-                  <div class="row align-items-center my-6 mx-auto">
-                    <div class="col-md-6 col-lg-5 offset-md-1">
-                      <h3 style='font-size:1.5rem;font-weight:light' class=" lh-base text-white">
-                        Contract Audit <br>
-                        Pancake Swap Liquidity Lock and Listing <br>
-                        Launching Intensive Marketing and Publicity Campaign
-                      </h3>
-                    </div>
-                    <div class="col-md-5 text-white offset-lg-1">
-                      <!-- <p class="mb-0">We the farmers choose the vegetables in your share each week. A Farm Share is
-                        perfect for those who love the weekly surprise, and who look forward to cooking with inspiration
-                        from the seasons.</p> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab-4">
-                  <div class="row align-items-center my-6 mx-auto">
-                    <div class="col-md-6 col-lg-5 offset-md-1">
-                      <h3 style='font-size:1.5rem;font-weight:light' class=" lh-base text-white">
-                        Development of Launchpad and DEX <br>
-                        Coin Market Listing <br>
-                        Coin Gecko Listing <br>
-                        Website Update
+                  <!--/.bg-holder-->
 
-                      </h3>
+                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/rugpull.jpeg" alt="" /></div>
+                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                    <div class="card-body px-0">
+                      <h4 class="card-title pt-md-5">W.A.R.A.P</h4>
+                      <p class="mb-0">One of major mission is what we call W.A.R.A.P, a war against rugs and pulls <br class="d-none d-lg-block">Rug pulling or the rug as some calls is when a major concern. a rug pull occcurs when a malicious liquidiy provider,project or its developers extract and drain the liquidity pools leaving hodlers with nothing but useless tokens. Farm Finance is waging a war against this ugly scenario. </p>
+                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                      </div>
                     </div>
-                    <div class="col-md-5 text-white offset-lg-1">
-                      <!-- <p class="mb-0">We the farmers choose the vegetables in your share each week. A Farm Share is
-                        perfect for those who love the weekly surprise, and who look forward to cooking with inspiration
-                        from the seasons.</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card px-5 px-md-3 py-lg-5">
+                <div class="row flex-center">
+                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:contain;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:cover;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/audit.jpeg" alt="" /></div>
+                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                    <div class="card-body px-0">
+                      <h4 class="card-title pt-md-5">Smart Contract Audit </h4>
+                      <p class="mb-0">It is important and very neccessary that your contract is audited. We will be working and partnering with big and trusted players in the ecosystem to ensure contract audit is cheap and readily avaialable to all interested parties and every project interested in using our products and services. Investors money needs to be safe and used appropriately.  <br class="d-none d-lg-block">  </p>
+                      <div>
+                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card px-5 px-md-3 py-lg-5">
+                <div class="row flex-center">
+                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:contain;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:cover;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/coins.jpeg" alt="" /></div>
+                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                    <div class="card-body px-0">
+                      <h4 class="card-title pt-md-5">Our Products</h4>
+                      <p class="mb-0">Farm Finance is the Parent, a lot of seeds will be planted and watered with the backing of the community. A launchpad free of the bereaucratic,manual selcetion and KYC Nature that has hindered new innovations in the the industry. This will be followed up with the development of our AMM platform so projects can move directly from our launchpad to our Liquidity pool. As an ecosystem, Farm Finance will help vibrant startups get exposure to thecommunity and access to investors</p>
+                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card px-5 px-md-3 py-lg-5">
+                <div class="row flex-center">
+                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:contain;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:cover;">
+                  </div>
+                  <!--/.bg-holder-->
+
+                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/toke.jpeg" alt="" /></div>
+                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                    <div class="card-body px-0">
+                      <h4 class="card-title pt-md-5">Our Native Utility Token</h4><br><br>
+                      <p class="mb-0">The Farm Finance Token(FAFI) is the native utility token of the Farm Finance ecosytem. Holders can vote and decide major decisions guiding the ecosytem. Holders will be able to invest early in high potential tech and DeFi startups using pour Lauchpad <br class="d-none d-lg-block"> <br class="d-none d-lg-block"></p>
+                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -400,321 +225,231 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- <section class="py-8" id="testimonial">
-      <div class="container-lg">
-        <div class="row flex-center">
-          <div class="col-12 col-lg-10 col-xl-12">
-            <div class="bg-holder"
-              style="background-image:url(assets/img/illustrations/testimonial-bg.png);background-position:top left;background-size:120px 83px;">
+      </section>
+      <section class="py-5">
+        <div class="container-lg bg-info p-5 p-md-5 p-xl-7 rounded-3">
+          <div class="row flex-center">
+            <div class="col-12">
+              <h2 class="text-light fw-bold" id="rdm">Our Roadmap
             </div>
-            /.bg-holder
-            <h6 class="fs-3 fs-lg-4 fw-bold lh-sm">What investors like you <br />are saying about Zou</h6>
+            <p style="color: white;">Roadmap for Q1,Q2 & Q3 2021</p>
           </div>
-          <div class="carousel slide pt-3" id="carouselExampleDark" data-bs-ride="carousel">
+          <div class="carousel slide pt-6" id="carouselExampleDark" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <div class="row h-100 mx-3 mx-sm-5 mx-md-4 my-md-7 m-lg-7 mt-7">
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-1.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Fernando Soler</h5>
-                            <p class="fw-normal text-black">Telecommunication Engineer</p>
+                <div class="row h-100">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                           
                           </div>
                         </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Quis autem vel eum iure reprehenderit qui in ea
-                          voluptate velit esse quam nihil molestiae</p>
-                      </
-                            <p class="fw-normal text-black">Head of Agrogofund </p>
-                          </div>
-                        </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium </p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract deployment</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">website first version</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Setting up social</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-2.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ilone Pickford</h5>div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-3.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ed O’Brien</h5>
-                            <p class="fw-normal text-black">Herbalist</p>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                           
                           </div>
                         </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium </p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Airdrop</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Whitepaper release</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Intensive Publicity begins</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                           
+                          </div>
+                        </div>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Seed sale</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">1st MVP development begins</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Private sales</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <div class="row h-100 mx-3 mx-sm-5 mx-md-4 my-md-7 m-lg-7 mt-7">
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-1.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Fernando Soler</h5>
-                            <p class="fw-normal text-black">Telecommunication Engineer</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Quis autem vel eum iure reprehenderit qui in ea
-                          voluptate velit esse quam nihil molestiae</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-2.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ilone Pickford</h5>
-                            <p class="fw-normal text-black">Head of Agrogofund Groups </p>
-                          </div>
-                        </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-3.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ed O’Brien</h5>
-                            <p class="fw-normal text-black">Herbalist</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Ui dolorem eum fugiat quo voluptas nulla pariatur?
-                          At vero eos et accusamus et iusto odio</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
               <div class="carousel-item">
-                <div class="row h-100 mx-3 mx-sm-5 mx-md-4 my-md-7 m-lg-7 mt-7">
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-1.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Fernando Soler</h5>
-                            <p class="fw-normal text-black">Telecommunication Engineer</p>
+                <div class="row h-100">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                          
                           </div>
                         </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Quis autem vel eum iure reprehenderit qui in ea
-                          voluptate velit esse quam nihil molestiae</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract Audit</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Presales</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">liquidity lock and dex listing</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-2.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ilone Pickford</h5>
-                            <p class="fw-normal text-black">Head of Agrogofund Groups </p>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                            
                           </div>
                         </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium </p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Marketing and partnerships</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coinmarket listing</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coingecko listing</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card h-100 shadow">
-                      <div class="card-body my-3">
-                        <div class="align-items-xl-center d-block d-xl-flex px-3"><img
-                            class="img-fluid me-3 me-md-2 me-lg-3" src="assets/img/gallery/user-3.png" width="50"
-                            alt="" />
-                          <div class="flex-1 align-items-center pt-2">
-                            <h5 class="mb-0 fw-bold text-success">Ed O’Brien</h5>
-                            <p class="fw-normal text-black">Herbalist</p>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 py-3">
+                      <div class="card-body my-2">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-1 align-items-center">
+                            
                           </div>
                         </div>
-                        <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Ui dolorem eum fugiat quo voluptas nulla pariatur?
-                          At vero eos et accusamus et iusto odio</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Website update</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">MVP testnet</p>
+                        <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Exchange listing decision by community</p>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row px-3 px-sm-6 px-md-0 px-lg-5 px-xl-4">
-              <div class="col-12 position-relative"><a class="carousel-control-prev carousel-icon z-index-2"
-                  href="#carouselExampleDark" role="button" data-bs-slide="prev"><span
-                    class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                    class="visually-hidden">Previous</span></a><a class="carousel-control-next carousel-icon z-index-2"
-                  href="#carouselExampleDark" role="button" data-bs-slide="next"><span
-                    class="carousel-control-next-icon" aria-hidden="true"></span><span
-                    class="visually-hidden">Next</span></a></div>
+            <div class="row px-3 px-md-0 mt-4">
+              <div class="col-6 position-relative">
+                <ol class="carousel-indicators">
+                  <li class="active" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"></li>
+                  <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+                </ol>
+              </div>
+              <div class="col-6 position-relative"><a class="carousel-control-prev carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section>
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="z-index-1 cta">
-      <div class="container">
-        <div class="row flex-center">
-          <div class="col-12">
-            <div class="card shadow h-100 py-5">
-              <div class="card-body text-center">
-                <h1 class="fw-semi-bold mb-4">The future of &nbsp;<span class="text-success"> DEFI </span>
-                  &nbsp; is You</h1><a class="btn btn-lg btn-success px-6" href="#" role="button"> Join us now </a>
-              </div>
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-6 pb-0">
+
+        <div class="container">
+          <hr class="text-info opacity-25" />
+          <div class="row py-7 justify-content-sm-between text-center text-md-start">
+            <div class="col-md-6">
+              <h1 class="fw-bold">Join our community today!</h1>
+              <p>Make returns on your investment and help keep DeFi safe on Bsc.</p>
+              <p>Not a financial advice.</p>
+              <p>ALWAYS DYOR.</p>
             </div>
+            <div class="col-md-6 text-lg-end"><a  style="background-color:rgb(6, 138, 58); color:white" class="btn btn-lg  rounded-pill me-4 me-md-3 me-lg-4" href="#" role="button">Buy FAFI Now</a><a class="btn btn-light rounded-pill shadow fw-bold" href="#" role="button">0xd24ea4a7aaf44638b6cd7ef4ef319628be4c0d86
+                <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                </svg></a></div>
           </div>
-        </div>
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
-
-    {% endblock main %}
-
-    <section class="py-0" id="contact">
-      <div class="bg-holder"
-        style="background-image:url(assets/img/illustrations/footer-bg.png);background-position:center;background-size:cover;">
-      </div>
-      <!--/.bg-holder-->
-      <div class="container">
-        <div class="row justify-content-lg-between min-vh-75" style="padding-top:21rem">
-          <!-- <div class="col-6 col-sm-4 col-lg-auto mb-3">
-            <h6 class="mb-3 text-1000 fw-semi-bold">COMPANY </h6>
-            <ul class="list-unstyled mb-md-4 mb-lg-0">
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">About Us</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Team</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Careers</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Contact</a></li>
-            </ul>
-          </div>
-           <div class="col-6 col-sm-4 col-lg-auto mb-3">
-            <h6 class="mb-3 text-1000 fw-semi-bold">INVEST </h6>
-            <ul class="list-unstyled mb-md-4 mb-lg-0">
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Features</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">How it works</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Pricing</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Login</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-sm-4 col-lg-auto mb-3">
-            <h6 class="mb-3 text-1000 fw-semi-bold">LEGAL </h6>
-            <ul class="list-unstyled mb-md-4 mb-lg-0">
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Privacy</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Terms</a></li>
-              <li class="mb-3"><a class="text-700 text-decoration-none" href="#!">Security</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-lg-auto mb-3">
-            <div class="card bg-success">
-              <div class="card-body p-sm-4">
-                <h5 class="text-white">Blog Zou</h5>
-                <p class="mb-0 text-white">write email to us<span
-                    class="text-white fs--1 fs-sm-1">info@zoufarm.com</span></p><button
-                  class="btn btn-light text-success" type="button"> <svg class="bi bi-person me-1"
-                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#76C279" viewBox="0 0 16 16">
-                    <path
-                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
-                    </path>
-                  </svg>Sing In</button>
-              </div>
-            </div>
-          </div>
-        </div> -->
-          <hr class="text-300 mb-0" />
-          <div class="row flex-center py-5">
-            <div class="col-12 col-sm-8 col-md-6 text-center text-md-start"> <a class="text-decoration-none"
-                href="#"><img class="d-inline-block align-top " height='100' width='300' src="assets/img/farm-02.png"
-                  alt="" width="40" /><span style='color:red' class="text-theme font-monospace fs-3 ps-2"> </span></a>
-            </div>
-
-
-            <div class="col-12 col-sm-8 col-md-6 ">
-
-
-              <div style="text-align: right;">
-                <a href='http://twitter.com/farm_financeBsc/'> <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                    height="32" fill="#1DA1F2" class="bi bi-twitter" viewBox="0 0 16 16">
-                    <path
-                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                  </svg> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <a href='http://t.me/farmfinancebsc/'> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                    fill="#0088cc" class="bi bi-telegram" viewBox="0 0 16 16">
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
-                  </svg></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <a href=''><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black"
-                    class="bi bi-github" viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <a href = 'https://bscscan.com/address/0xd24ea4a7aaf44638b6cd7ef4ef319628be4c0d86'  target = '_blank'>
-                  <img src = 'assets/img/bsc.webp' height = '35' width = '35' >
-                </a>
-              </div>
-              <br>
-
-              <p style='padding-right:60px' class="fs--1 text-dark my-2 text-center text-md-end">&copy; {% now 'Y' %}
-                &nbsp;<a class="text-dark" href="https://farmfinance.trade/" target="_blank"> FARM FINANCE </a>
+          <div class="row justify-content-lg-around">
+            <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img class="img-fluid me-3" src="assets/img/icons/logo.png" alt="" /><span class="fw-bold fs-1 text-1000">Farm Finance</span></a>
+              
               </p>
+              </p>
+              <p>info@farmfinance.trade<br />
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3 mb-3 order-2 order-sm-1">
+              <h6 class="lh-lg fw-bold mb-4">About</h6>
+              <ul class="list-unstyled mb-md-4 mb-lg-0">
+                <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none" href="#!">Airdrop</a></li>
+                
+              
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-3 mb-3 order-3 order-sm-2">
+              <h6 class="lh-lg fw-bold mb-4"> Home </h6>
+              <ul class="list-unstyled mb-md-4 mb-lg-0">
+                <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none" href="#!">Telegram</a></li>
+                
+               
+              </ul>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3 mb-3 order-1 order-sm-3">
+              <h6 class="lh-lg fw-bold mb-4">Social Media </h6>
+              <ul class="list-unstyled mb-md-4 mb-lg-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#1DA1F2" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#0088CC" class="bi bi-telegram" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+                </svg>
+              </ul>
             </div>
           </div>
         </div>
-    </section>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
 
 
 
-  </main><!-- ===============================================-->
-  <!--    End of Main Content-->
-  <!-- ===============================================-->
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-6">
+
+        <div class="container">
+          <div class="row flex-center px-3">
+            <div class="col-12 col-md-6 px-md-0 order-1 order-md-0">
+              <div class="text-center text-md-start">
+                
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end mb-3 mb-md-0"> <a href="#"><img class="img-fluid" src="assets/img/icons/pre-footer.png" height="14" alt="" /></a></div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
 
 
 
-  <!-- ===============================================-->
-  <!--    JavaScripts-->
-  <!-- ===============================================-->
-  <script src="vendors/@popperjs/popper.min.js"></script>
-  <script src="vendors/bootstrap/bootstrap.min.js"></script>
-  <script src="vendors/is/is.min.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-  <script src="assets/js/theme.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
-</body>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&amp;display=swap" rel="stylesheet">
+  </body>
 
 </html>

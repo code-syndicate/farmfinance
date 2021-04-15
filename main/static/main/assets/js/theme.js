@@ -65,7 +65,7 @@ var rgbaColor = function rgbaColor() {
 
 
 var colors = {
-  primary: '#0057FF',
+  primary: '#2c7be5',
   secondary: '#748194',
   success: '#00d27a',
   info: '#27bcfd',
@@ -280,7 +280,7 @@ var navbarInit = function navbarInit() {
     var allColors = _objectSpread(_objectSpread({}, utils.colors), utils.grays);
 
     var name = utils.getData(navbar, DataKey.NAVBAR_ON_SCROLL);
-    var colorName = Object.keys(allColors).includes(name) ? name : 'light';
+    var colorName = Object.keys(allColors).includes(name) ? name : 'white';
     var color = allColors[colorName];
     var bgClassName = "bg-".concat(colorName);
     var shadowName = 'shadow-transition';
