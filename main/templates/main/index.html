@@ -1,460 +1,567 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <base href="/static/main/" >
+<base href="/static/main/">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Farm Finance</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title>Farm Finance</title>
 
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link href="assets/css/theme.css" rel="stylesheet" />
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
 
-  </head>
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+  <link href="assets/css/theme.css" rel="stylesheet" />
+
+</head>
 
 
-  <body>
+<body>
 
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/icons/logo.png"  alt="" /></a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto ms-lg-4 ms-xl-7 border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
-              <li class="nav-item"><a class="nav-link fw-bold active" aria-current="page" href="http://{{host}}#abt">About</a></li>
-              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#rdm">RoadMap</a></li>
-              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#fet">Features</a></li>
-              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}/tokenomics">Token</a></li>
-              <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#tk">FarmPaper</a></li>
+  <!-- ===============================================-->
+  <!--    Main Content-->
+  <!-- ===============================================-->
+  <main class="main" id="top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+      <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/icons/logo.png"
+            alt="" /></a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto ms-lg-4 ms-xl-7 border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
+            <li class="nav-item"><a class="nav-link fw-bold active" aria-current="page"
+                href="http://{{host}}#abt">About</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#rdm">RoadMap</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#fet">Features</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}/tokenomics">Token</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="http://{{host}}#tk">FarmPaper</a></li>
           </ul>
-            <form class="d-flex py-3 py-lg-0"><a class="btn btn-light rounded-pill shadow fw-bold" href="http://{{host}}" role="button">Buy FAFI Now
-                <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                </svg></a></form>
+          <form class="d-flex py-3 py-lg-0"><a class="btn btn-light rounded-pill shadow fw-bold" href="http://{{host}}"
+              role="button">Buy FAFI Now
+              <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                </path>
+              </svg></a></form>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="py-5 bg">
+
+      <div class="container" id="abt">
+        <div class="row align-items-center">
+          <div class="col-md-5 col-lg-7 order-md-1 pt-8"><img class="img-fluid" src="" alt="" /></div>
+          <div class="col-md-7 col-lg-5 text-center text-md-start pt-5 pt-md-9">
+            <h1 style = 'color:green;text-shadow: 1px 1px 1px black;' class="mb-6 display-2 fw-bold">Farm <br class="d-block d-lg-none d-xl-block" />Finance</h1>
+            <!-- <p style=' color:green;font-weight: normal;text-transform: capitalize;font-size:120%;text-shadow: 1px 1px 1px white;'
+              class="mt-3 mb-3 ">
+              An all in one truly Decentralized solution providing ecosystem for DeFi products and Projects on the
+              Binance Smart chain.</p> -->
+            <a style = 'color:white;' class="btn btn-lg btn-success rounded-pill" href="http://{{host}}" role="button">Our Projects</a>
           </div>
         </div>
-      </nav>
+      </div>
+      <!-- end of .container-->
 
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-5 bg">
-
-        <div class="container" id="abt">
-          <div class="row align-items-center">
-            <div class="col-md-5 col-lg-7 order-md-1 pt-8" ><img class="img-fluid" src="" alt="" /></div>
-            <div class="col-md-7 col-lg-5 text-center text-md-start pt-5 pt-md-9">
-              <h1 class="mb-4 display-2 fw-bold">Farm <br class="d-block d-lg-none d-xl-block" />Finance</h1>
-              <p style = 'color:purple;font-weight: bold;text-transform: capitalize;font-size:120%;text-shadow: 1px 1px 1px white;' class="mt-3 mb-3 ">An all in one truly Decentralized solution providing ecosystem for DeFi products and Projects on the Binance Smart chain.</p><a class="btn btn-lg btn-info rounded-pill" href="#" role="button">Our Projects</a>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
 
 
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-4">
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="py-4">
 
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="card mb-3 bg-soft-danger rounded-3">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-5 col-lg-6 text-md-center"><img class="img-fluid" src="assets/img/compp.jpeg" alt="" /></div>
-                  <div class="col-md-7 col-lg-6 px-md-2 px-xl-6 text-center text-md-start">
-                    <div class="card-body px-4 py-5 p-lg-3 p-md-4">
-                      <h1 class="mb-4 fw-bold">A truly Decentralized ecosytem to Safeguard DeFi on the Binance Smart Chain <br class="d-md-none d-xxl-block" /></h1>
-                      <p class="card-text">A huge potential came with the arrival of the Binance Smart Chain. This potential is however being overshadowed by a lot of messy affairs, with Rugs and Pulls being the most challenging of all.As a DeFi ecosytem our job at Farm Finance is to keep the Binance Smart Chain as safe as possible for all, both new and existing projects and their investors or users.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      <section class="py-6">
-        <div class="container-lg">
-          <div class="row flex-center mb-5">
-            <div class="col-auto text-center my-4">
-              <h1 class="mb-4 fw-bold" id="fet">Features</h1>
-              <p>Some of the features and advantages that we provide for those of you <br />who use DeFi on the Binance Smart Chain.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <div class="card px-5 px-md-3 py-lg-5">
-                <div class="row flex-center">
-                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:contain;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:cover;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/rugpull.jpeg" alt="" /></div>
-                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
-                    <div class="card-body px-0">
-                      <h4 class="card-title pt-md-5">W.A.R.A.P</h4>
-                      <p class="mb-0">One of major mission is what we call W.A.R.A.P, a war against rugs and pulls <br class="d-none d-lg-block">Rug pulling or the rug as some calls is when a major concern. a rug pull occcurs when a malicious liquidiy provider,project or its developers extract and drain the liquidity pools leaving hodlers with nothing but useless tokens. Farm Finance is waging a war against this ugly scenario. </p>
-                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
-                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card px-5 px-md-3 py-lg-5">
-                <div class="row flex-center">
-                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:contain;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:cover;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/audit.jpeg" alt="" /></div>
-                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
-                    <div class="card-body px-0">
-                      <h4 class="card-title pt-md-5">Smart Contract Audit </h4>
-                      <p class="mb-0">It is important and very neccessary that your contract is audited. We will be working and partnering with big and trusted players in the ecosystem to ensure contract audit is cheap and readily avaialable to all interested parties and every project interested in using our products and services. Investors money needs to be safe and used appropriately.  <br class="d-none d-lg-block">  </p>
-                      <div>
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card px-5 px-md-3 py-lg-5">
-                <div class="row flex-center">
-                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:contain;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:cover;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/coins.jpeg" alt="" /></div>
-                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
-                    <div class="card-body px-0">
-                      <h4 class="card-title pt-md-5">Our Products</h4>
-                      <p class="mb-0">Farm Finance is the Parent, a lot of seeds will be planted and watered with the backing of the community. A launchpad free of the bereaucratic,manual selcetion and KYC Nature that has hindered new innovations in the the industry. This will be followed up with the development of our AMM platform so projects can move directly from our launchpad to our Liquidity pool. As an ecosystem, Farm Finance will help vibrant startups get exposure to thecommunity and access to investors</p>
-                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
-                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="card px-5 px-md-3 py-lg-5">
-                <div class="row flex-center">
-                  <div class="bg-holder z-index-1 d-none d-lg-block" style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:contain;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="bg-holder z-index-1 d-block d-lg-none" style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:cover;">
-                  </div>
-                  <!--/.bg-holder-->
-
-                  <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/toke.jpeg" alt="" /></div>
-                  <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
-                    <div class="card-body px-0">
-                      <h4 class="card-title pt-md-5">Our Native Utility Token</h4><br><br>
-                      <p class="mb-0">The Farm Finance Token(FAFI) is the native utility token of the Farm Finance ecosytem. Holders can vote and decide major decisions guiding the ecosytem. Holders will be able to invest early in high potential tech and DeFi startups using pour Lauchpad <br class="d-none d-lg-block"> <br class="d-none d-lg-block"></p>
-                      <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
-                        <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                      </div>
-                    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-3 bg-soft-danger rounded-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-5 col-lg-6 text-md-center"><img class="img-fluid" src="assets/img/compp.jpeg"
+                    alt="" /></div>
+                <div class="col-md-7 col-lg-6 px-md-2 px-xl-6 text-center text-md-start">
+                  <div class="card-body px-4 py-5 p-lg-3 p-md-4">
+                    <h1 class="mb-4 fw-bold">A truly Decentralized ecosytem to Safeguard DeFi on the Binance Smart Chain
+                      <br class="d-md-none d-xxl-block" /></h1>
+                    <p class="card-text">A huge potential came with the arrival of the Binance Smart Chain. This
+                      potential is however being overshadowed by a lot of messy affairs, with Rugs and Pulls being the
+                      most challenging of all.As a DeFi ecosytem our job at Farm Finance is to keep the Binance Smart
+                      Chain as safe as possible for all, both new and existing projects and their investors or users.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="py-5">
-        <div class="container-lg bg-info p-5 p-md-5 p-xl-7 rounded-3">
-          <div class="row flex-center">
-            <div class="col-12">
-              <h2 class="text-light fw-bold" id="rdm">Our Roadmap
-            </div>
-            <p style="color: white;">Roadmap for Q1,Q2 & Q3 2021</p>
+      </div>
+      <!-- end of .container-->
+
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
+
+
+    <section class="py-6">
+      <div class="container-lg">
+        <div class="row flex-center mb-5">
+          <div class="col-auto text-center my-4">
+            <h1 class="mb-4 fw-bold" id="fet">Features</h1>
+            <p>Some of the features and advantages that we provide for those of you <br />who use DeFi on the Binance
+              Smart Chain.</p>
           </div>
-          <div class="carousel slide pt-6" id="carouselExampleDark" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <div class="row h-100">
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                           
-                          </div>
-                        </div>
-                        <p style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract deployment</p>
-                        <p  style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">website first version</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Setting up social</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                           
-                          </div>
-                        </div>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Airdrop</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Whitepaper release</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Intensive Publicity begins</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                           
-                          </div>
-                        </div>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Seed sale</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">1st MVP development begins</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Private sales</p>
-                      </div>
-                    </div>
-                  </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card px-5 px-md-3 py-lg-5">
+              <div class="row flex-center">
+                <div class="bg-holder z-index-1 d-none d-lg-block"
+                  style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:contain;">
                 </div>
-              </div>
-              
-              <div class="carousel-item">
-                <div class="row h-100">
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                          
-                          </div>
-                        </div>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract Audit</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Presales</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">liquidity lock and dex listing</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                            
-                          </div>
-                        </div>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Marketing and partnerships</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coinmarket listing</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coingecko listing</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card h-100 py-3">
-                      <div class="card-body my-2">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-1 align-items-center">
-                            
-                          </div>
-                        </div>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Website update</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">MVP testnet</p>
-                        <p   style ='color:purple;font-weight: bold;text-transform: capitalize;' class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Exchange listing decision by community</p>
-                        
-                      </div>
+                <!--/.bg-holder-->
+
+                <div class="bg-holder z-index-1 d-block d-lg-none"
+                  style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:cover;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/rugpull.jpeg"
+                    alt="" /></div>
+                <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                  <div class="card-body px-0">
+                    <h4 class="card-title pt-md-5">W.A.R.A.P</h4>
+                    <p class="mb-0">One of major mission is what we call W.A.R.A.P, a war against rugs and pulls <br
+                        class="d-none d-lg-block">Rug pulling or the rug as some calls is when a major concern. a rug
+                      pull occcurs when a malicious liquidiy provider,project or its developers extract and drain the
+                      liquidity pools leaving hodlers with nothing but useless tokens. Farm Finance is waging a war
+                      against this ugly scenario. </p>
+                    <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                      <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="#9C69E2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                        </path>
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row px-3 px-md-0 mt-4">
-              <div class="col-6 position-relative">
-                <ol class="carousel-indicators">
-                  <li class="active" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"></li>
-                  <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
-                  <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
-                </ol>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card px-5 px-md-3 py-lg-5">
+              <div class="row flex-center">
+                <div class="bg-holder z-index-1 d-none d-lg-block"
+                  style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:contain;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="bg-holder z-index-1 d-block d-lg-none"
+                  style="background-image:url(assets/img/illustrations/feature-bg-2.png);background-position:center;background-size:cover;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/audit.jpeg"
+                    alt="" /></div>
+                <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                  <div class="card-body px-0">
+                    <h4 class="card-title pt-md-5">Smart Contract Audit </h4>
+                    <p class="mb-0">It is important and very neccessary that your contract is audited. We will be
+                      working and partnering with big and trusted players in the ecosystem to ensure contract audit is
+                      cheap and readily avaialable to all interested parties and every project interested in using our
+                      products and services. Investors money needs to be safe and used appropriately. <br
+                        class="d-none d-lg-block"> </p>
+                    <div>
+                      <svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-6 position-relative"><a class="carousel-control-prev carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card px-5 px-md-3 py-lg-5">
+              <div class="row flex-center">
+                <div class="bg-holder z-index-1 d-none d-lg-block"
+                  style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:contain;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="bg-holder z-index-1 d-block d-lg-none"
+                  style="background-image:url(assets/img/illustrations/feature-bg-3.png);background-position:center;background-size:cover;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/coins.jpeg"
+                    alt="" /></div>
+                <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                  <div class="card-body px-0">
+                    <h4 class="card-title pt-md-5">Our Products</h4>
+                    <p class="mb-0">Farm Finance is the Parent, a lot of seeds will be planted and watered with the
+                      backing of the community. A launchpad free of the bereaucratic,manual selcetion and KYC Nature
+                      that has hindered new innovations in the the industry. This will be followed up with the
+                      development of our AMM platform so projects can move directly from our launchpad to our Liquidity
+                      pool. As an ecosystem, Farm Finance will help vibrant startups get exposure to thecommunity and
+                      access to investors</p>
+                    <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                      <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="#9C69E2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card px-5 px-md-3 py-lg-5">
+              <div class="row flex-center">
+                <div class="bg-holder z-index-1 d-none d-lg-block"
+                  style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:contain;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="bg-holder z-index-1 d-block d-lg-none"
+                  style="background-image:url(assets/img/illustrations/feature-bg-4.png);background-position:center;background-size:cover;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="col-md-4 pe-0 pe-md-0 text-center"><img class="img-fluid" src="assets/img/toke.jpeg"
+                    alt="" /></div>
+                <div class="col-md-8 ps-md-3 pe-md-2 text-center text-md-start z-index-2">
+                  <div class="card-body px-0">
+                    <h4 class="card-title pt-md-5">Our Native Utility Token</h4><br><br>
+                    <p class="mb-0">The Farm Finance Token(FAFI) is the native utility token of the Farm Finance
+                      ecosytem. Holders can vote and decide major decisions guiding the ecosytem. Holders will be able
+                      to invest early in high potential tech and DeFi startups using pour Lauchpad <br
+                        class="d-none d-lg-block"> <br class="d-none d-lg-block"></p>
+                    <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                      <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="#9C69E2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-6 pb-0">
-
-        <div class="container">
-          <hr class="text-info opacity-25" />
-          <div class="row py-7 justify-content-sm-between text-center text-md-start">
-            <div class="col-md-6">
-              <h1 class="fw-bold">Join our community today!</h1>
-              <p>Make returns on your investment and help keep DeFi safe on Bsc.</p>
-              <p>Not a financial advice.</p>
-              <p>ALWAYS DYOR.</p>
-            </div>
-            <div class="col-md-6 text-lg-end"><a  style="background-color:rgb(6, 138, 58); color:white" class="btn btn-lg  rounded-pill me-4 me-md-3 me-lg-4" href="#" role="button">Buy FAFI Now</a><a class="btn btn-light rounded-pill shadow fw-bold" href="#" role="button">0xd24ea4a7aaf44638b6cd7ef4ef319628be4c0d86
-                <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                </svg></a></div>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container-lg bg-info p-5 p-md-5 p-xl-7 rounded-3">
+        <div class="row flex-center">
+          <div class="col-12">
+            <h2 class="text-light fw-bold" id="rdm">Our Roadmap
           </div>
-          <div class="row justify-content-lg-around">
-            <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img class="img-fluid me-3" src="assets/img/icons/logo.png" alt="" /><span class="fw-bold fs-1 text-1000">Farm Finance</span></a>
-              
-              </p>
-              </p>
-              <p>info@farmfinance.trade<br />
+          <p style="color: white;">Roadmap for Q1,Q2 & Q3 2021</p>
+        </div>
+        <div class="carousel slide pt-6" id="carouselExampleDark" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="row h-100">
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract deployment</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">website first version</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Setting up social</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Airdrop</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Whitepaper release</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Intensive Publicity begins</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Seed sale</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">1st MVP development begins</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Private sales</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-6 col-sm-4 col-lg-3 mb-3 order-2 order-sm-1">
-              <h6 class="lh-lg fw-bold mb-4">About</h6>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none" href="http://{{host}}/">Airdrop</a></li>
-                
-              
-              </ul>
+
+            <div class="carousel-item">
+              <div class="row h-100">
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract Audit</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Presales</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">liquidity lock and dex listing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Marketing and partnerships</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coinmarket listing</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Coingecko listing</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card h-100 py-3">
+                    <div class="card-body my-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-1 align-items-center">
+
+                        </div>
+                      </div>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Website update</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">MVP testnet</p>
+                      <p style='color:purple;font-weight: bold;text-transform: capitalize;'
+                        class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Exchange listing decision by
+                        community</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-6 col-sm-4 col-lg-3 mb-3 order-3 order-sm-2">
-              <h6 class="lh-lg fw-bold mb-4"> Home </h6>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none" href="http://t.me/farmfinancebsc/">Telegram</a></li>
-                
-               
-              </ul>
+          </div>
+          <div class="row px-3 px-md-0 mt-4">
+            <div class="col-6 position-relative">
+              <ol class="carousel-indicators">
+                <li class="active" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"></li>
+                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+              </ol>
             </div>
-            <div class="col-12 col-sm-4 col-lg-3 mb-3 order-1 order-sm-3">
-              <h6 class="lh-lg fw-bold mb-4">Social Media </h6>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <a href="http://twitter.com/farm_financeBsc/">
-                <svg xmlns="http://twitter.com/farm_financeBsc/" width="35" height="35" fill="#1DA1F2" class="bi bi-twitter" viewBox="0 0 16 16">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            <div class="col-6 position-relative"><a class="carousel-control-prev carousel-icon z-index-2"
+                href="#carouselExampleDark" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"
+                  aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a
+                class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark" role="button"
+                data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span
+                  class="visually-hidden">Next</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="py-6 pb-0">
+
+      <div class="container">
+        <hr class="text-info opacity-25" />
+        <div class="row py-7 justify-content-sm-between text-center text-md-start">
+          <div class="col-md-6">
+            <h1 class="fw-bold">Join our community today!</h1>
+            <p>Make returns on your investment and help keep DeFi safe on Bsc.</p>
+            <p>Not a financial advice.</p>
+            <p>ALWAYS DYOR.</p>
+          </div>
+          <div class="col-md-6 text-lg-end"><a style="background-color:rgb(6, 138, 58); color:white"
+              class="btn btn-lg  rounded-pill me-4 me-md-3 me-lg-4" href="#" role="button">Buy FAFI Now</a><a
+              class="btn btn-light rounded-pill shadow fw-bold"
+              href="https://bscscan.com/address/0x20a449043A6A7bd928F45c1853701137f5068000" role="button"> Bsc Scan
+              <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#9C69E2"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+                </path>
+              </svg></a></div>
+        </div>
+        <div class="row justify-content-lg-around">
+          <div class="col-12 col-sm-12 col-lg-3 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img
+                class="img-fluid me-3" src="assets/img/icons/logo.png" alt="" /><span
+                class="fw-bold fs-1 text-1000">Farm Finance</span></a>
+
+            </p>
+            </p>
+            <p>info@farmfinance.trade<br />
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 mb-3 order-2 order-sm-1">
+            <h6 class="lh-lg fw-bold mb-4">About</h6>
+            <ul class="list-unstyled mb-md-4 mb-lg-0">
+              <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none" href="http://{{host}}/">Airdrop</a></li>
+
+
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 mb-3 order-3 order-sm-2">
+            <h6 class="lh-lg fw-bold mb-4"> Home </h6>
+            <ul class="list-unstyled mb-md-4 mb-lg-0">
+              <li class="lh-lg"><a class="text-dark fs--1 text-decoration-none"
+                  href="http://t.me/farmfinancebsc/">Telegram</a></li>
+
+
+            </ul>
+          </div>
+          <div class="col-12 col-sm-4 col-lg-3 mb-3 order-1 order-sm-3">
+            <h6 class="lh-lg fw-bold mb-4">Social Media </h6>
+            <ul class="list-unstyled mb-md-4 mb-lg-0">
+              <a href="http://twitter.com/farm_financeBsc/">
+                <svg xmlns="http://twitter.com/farm_financeBsc/" width="35" height="35" fill="#1DA1F2"
+                  class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                 </svg>
-                </a>
-                
-                <a href="http://t.me/farmfinancebsc/">
-                <svg xmlns="http://t.me/farmfinancebsc/" width="35" height="35" fill="#0088CC" class="bi bi-telegram" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+              </a>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
+              <a href="http://t.me/farmfinancebsc/">
+                <svg xmlns="http://t.me/farmfinancebsc/" width="35" height="35" fill="#0088CC" class="bi bi-telegram"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
                 </svg>
-                </a>
+              </a>
 
-              </ul>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
+              <a href="https://bscscan.com/address/0x20a449043A6A7bd928F45c1853701137f5068000">
+                <img alt='bsc scan' height='35' width='35' src="assets/img/bsc.jpg">
+              </a>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end of .container-->
+
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
+
+
+
+
+    <!-- ============================================-->
+    <!-- <section> begin ============================-->
+    <section class="py-6">
+
+      <div class="container">
+        <div class="row flex-center px-3">
+          <div class="col-12 col-md-6 px-md-0 order-1 order-md-0">
+            <div class="text-center text-md-start">
+
+              </p>
             </div>
           </div>
+          <!-- <div class="col-12 col-md-6 text-center text-md-end mb-3 mb-md-0"> <a href="#"><img class="img-fluid" src="assets/img/icons/pre-footer.png" height="14" alt="" /></a></div>
+          </div> -->
         </div>
         <!-- end of .container-->
 
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
+
+
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
 
 
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-6">
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  <script src="vendors/@popperjs/popper.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="vendors/is/is.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="assets/js/theme.js"></script>
 
-        <div class="container">
-          <div class="row flex-center px-3">
-            <div class="col-12 col-md-6 px-md-0 order-1 order-md-0">
-              <div class="text-center text-md-start">
-                
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 text-center text-md-end mb-3 mb-md-0"> <a href="#"><img class="img-fluid" src="assets/img/icons/pre-footer.png" height="14" alt="" /></a></div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-    </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
-
-
-
-
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="assets/js/theme.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&amp;display=swap" rel="stylesheet">
-  </body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&amp;display=swap"
+    rel="stylesheet">
+</body>
 
 </html>
