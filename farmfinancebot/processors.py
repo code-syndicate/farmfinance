@@ -47,8 +47,9 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
         msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
         msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
         msg4 = '4. Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg5 = '\n\nSend /menu for a list of available options.'
 
-        msg = msg1 + msg2 + msg3 + msg4
+        msg = msg1 + msg2 + msg3 + msg4 + msg5
         
         state.set_memory({
             'submittedTwitterLink' : False,
@@ -79,22 +80,22 @@ def command_processor(bot, update, state):
     username = state.telegram_user.first_name.capitalize()
 
     if not( chat_msg in valid_commands ):
-        msg = 'Please send a valid action. Send /menu for available options'
+        msg = 'Please send a valid action. Send /menu for available options.'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     
     command = chat_msg
 
     if command == '/menu':
-        reply = 'Here are the available actions.\n\n1.Send /account for account info.\n2.Send /withdraw  to request for withdrawal'
+        reply = 'Here are the available actions.\n\n1.Send /account for account info.\n2.Send /withdraw  to request for withdrawal.'
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/account':
         info = ""
         if state.get_memory()['completedAllTasks'] is True:
-            info = "You have not been verified for withdrawal"
+            info = "You have  been verified for withdrawal"
         else:
-            info = "You have been verified for withdrawal"
+            info = "You have not been verified for withdrawal"
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
@@ -105,7 +106,7 @@ def command_processor(bot, update, state):
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
 
-            reply = 'You have  not  been verified for withdrawal by the admins.Plese make sure you have completed all tasks, then try again later.Thank you.'
+            reply = 'You have  not  been verified for withdrawal by the admins.Please make sure you have completed all tasks, then try again later.Thank you.'
             bot.sendMessage(update.get_chat().get_id(), reply )
             raise ProcessFailure
     
