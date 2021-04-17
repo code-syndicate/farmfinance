@@ -6,7 +6,16 @@ from .models import TelegramState
 from .bot import TelegramBot
 
 
-@processor(state_manager, from_states=state_types.All)
-def hello_world(bot: TelegramBot, update: Update, state: TelegramState):
-    msg = "Hello, welcome to Farm Finance. Please complete the necessary conditions to qualify for our upcoming airdrop. Send /info for more information"
-    bot.sendMessage(update.get_chat().get_id(), msg )
+
+# First Time chat responder 
+@processor(
+    state_manager,
+    from_states = state_types.Reset, 
+    update_types = [ update_types.EditedMessage, update_types.Message ], 
+    message_types = [ message_types.Text, ]
+
+)
+def respond_to_start( bot : TelegramBot, update : Update, state : TelegramState):
+    msg = "Hello!, welcome to Farm Finance.Click /start to get started"
+    bot.sendMessage( update.get_chat().get_id(), msg  )
+
