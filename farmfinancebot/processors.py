@@ -58,7 +58,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
             'completedAllTasks' : False,
         })
 
-        bot.sendMessage(update.get_chat().get_id(), msg)
+        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode =  TelegramBot.PARSE_MODE_HTML)
     else:
         msg = "Hello " + username + " \U000026C4 , welcome to Farm Finance.Click  /start  to get started."
         bot.sendMessage(update.get_chat().get_id(), msg)
