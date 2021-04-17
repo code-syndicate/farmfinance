@@ -101,7 +101,7 @@ def command_processor(bot, update, state):
 
     elif command == '/withdraw':
         if state.get_memory()['completedAllTasks'] is True:
-            msg = "Congratulations! \U+1F60D You have been verified for withdrawal \U00002714.\n\nEnter your FAFI token wallet address below."
+            msg = "Congratulations! You have been verified for withdrawal \U00002714.\n\nEnter your FAFI token wallet address below."
             state.set_name('waiting_for_wallet_address')
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
