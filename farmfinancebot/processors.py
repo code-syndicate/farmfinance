@@ -45,7 +45,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     if chat_msg == '/start':
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
-        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>,like and retweet the pinned tweet about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         msg5 = '\n\nClick /menu for a list of other available options.'
 
@@ -100,25 +100,71 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/proceed':
-        if state.get_memory()['completedAllTasks'] is True:
-            msg = " \U00002714.\n\nEnter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
-            state.set_name('waiting_for_wallet_address')
-            bot.sendMessage(update.get_chat().get_id(), msg )
-        else:
+        msg = " \U00002714 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+        state.set_name('waiting_for_wallet_address')
+        bot.sendMessage(update.get_chat().get_id(), msg )
+        # else:
 
-            reply = 'You are not yet eligible for withdrawal \U0000274c Please make sure you have completed all tasks, then try again later.Thank you.'
-            bot.sendMessage(update.get_chat().get_id(), reply )
-            raise ProcessFailure
+        #     reply = 'You are not yet eligible for withdrawal \U0000274c Please make sure you have completed all tasks, then try again later.Thank you.'
+        #     bot.sendMessage(update.get_chat().get_id(), reply )
+        #     raise ProcessFailure
     
     elif command == '/procedures':
         reply = "Follow  the following procedures to receive your airdrop.\n\n"
         msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
-        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>,like and retweet the pinned tweet about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
 
+
+#  wallet Acceptor   
+@processor(
+    state_manager,
+    from_states='waiting_for_wallet_address',
+    update_types=[update_types.EditedMessage, update_types.Message],
+    message_types=message_types.Text,
+    success=state_types.Keep,
+    fail=state_types.Keep,
+
+)
+def wallet_processor(bot, update, state):
+    addr = str(update.get_message().get_text())
+    if len(addr) < 30 or not( addr.isalnum() ):
+        msg = "Please enter a valid wallet address"
+        bot.sendMessage(update.get_chat().get_id(), msg )
+        raise ProcessFailure
+    else:
+        msg = "Enter your twitter username"
+        state.set_name('waiting_for_twitter_username')
+        bot.sendMessage(update.get_chat().get_id(), msg)
+
+
+
+
+#  Twitter uanme Acceptor   
+@processor(
+    state_manager,
+    from_states='waiting_for_twitter_username',
+    update_types=[update_types.EditedMessage, update_types.Message],
+    message_types=message_types.Text,
+    success=state_types.Keep,
+    fail=state_types.Keep,
+
+)
+def twitter_username_processor(bot, update, state):
+    uname = str(update.get_message().get_text())
+    if len(uname) > 25 or uname.isdigit():
+        msg = "Please enter a valid twitter username"
+        bot.sendMessage(update.get_chat().get_id(), msg )
+        raise ProcessFailure
+    else:
+        msg = "Congratulations! You have successful applied for the FAFI airdrop."
+        state.set_name('submitted_twitter_name')
+        bot.sendMessage(update.get_chat().get_id(), msg)
+
+  
 
     
 
