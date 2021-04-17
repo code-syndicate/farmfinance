@@ -145,6 +145,7 @@ def wallet_processor(bot, update, state):
         # state.set_name('waiting_for_twitter_username')
         state.set_memory({
             'Wallet Adress' : addr,
+            'completedAllTasks' : state.get_memory()['completedAllTasks'],
         })
         bot.sendMessage(update.get_chat().get_id(), msg)
 
@@ -174,6 +175,8 @@ def twitter_username_processor(bot, update, state):
         state.set_name('submitted_twitter_name')
         state.set_memory({
             'Twitter Username' :  uname,
+             'completedAllTasks' : state.get_memory()['completedAllTasks'],
+             'Wallet Address' : state.get_memory()['Wallet Address'],
         })
         bot.sendMessage(update.get_chat().get_id(), msg)
 
