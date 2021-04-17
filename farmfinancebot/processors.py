@@ -15,7 +15,7 @@ from .bot import TelegramBot
     message_types = [ message_types.Text, ]
 
 )
-def respond_to_start( bot : TelegramBot, update : Update, state : TelegramState):
+def first_timers_responder( bot : TelegramBot, update : Update, state : TelegramState):
     msg = "Hello!, welcome to Farm Finance.Click /start to get started"
     bot.sendMessage( update.get_chat().get_id(), msg  )
 
