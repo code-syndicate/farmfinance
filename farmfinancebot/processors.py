@@ -44,6 +44,13 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     username = state.telegram_user
     if chat_msg == '/start':
         msg = "Hi " + username + "Welcome to FarmFinance Airdrop, follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
+        
+        state.set_memory({
+            'submittedTwitterLink' : False,
+            'setLogo' : False,
+            'RetweetedPost' : False,
+        })
+        
         bot.sendMessage(update.get_chat().get_id(), msg)
     else:
         msg = "Hello, welcome to Farm Finance.Click /start to get started"
