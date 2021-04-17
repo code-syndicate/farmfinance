@@ -5,14 +5,6 @@ from .bot import state_manager
 from .models import TelegramState
 from .bot import TelegramBot
 
-valid_commands = [ 
-    '/start',
-    '/commands',
-    '/withdraw',
-    '/account',
-]
-
-
 
 # First Time chat responder 
 @processor(
@@ -20,10 +12,10 @@ valid_commands = [
     from_states = [ state_types.Reset, state_types.All  ], 
     update_types = [ update_types.EditedMessage, update_types.Message ], 
     message_types = [ message_types.Text, ],
-    success = 'waiting_for_start_command',
+    # success = 'waiting_for_start_command',
 
 )
-def first_timers_responder( bot : TelegramBot, update : Update, state : TelegramState):
+def First_Chat_Responder( bot : TelegramBot, update : Update, state : TelegramState):
     msg = "Hello!, welcome to Farm Finance.Click /start to get started"
     bot.sendMessage( update.get_chat().get_id(), msg  )
 
