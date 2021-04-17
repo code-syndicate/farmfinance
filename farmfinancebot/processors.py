@@ -44,9 +44,9 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
-        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nComplete the tasks below to get up to $50 FAFI token.\n\n"
+        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nComplete the tasks below to get up to $100 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
-        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>,like and retweet the pinned tweet about our airdrop.\n\n "
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         msg5 = '\n\nClick /menu for a list of other available options.'
 
@@ -111,9 +111,9 @@ def command_processor(bot, update, state):
     
     elif command == '/procedures':
         reply = "Follow  the following procedures to receive your airdrop.\n\n"
-        msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
+        msg1 = "Complete the tasks below to get up to $100 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
-        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>,like and retweet the pinned tweet about our airdrop.\n\n "
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned tweet about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
