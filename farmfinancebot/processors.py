@@ -28,21 +28,21 @@ def first_timers_responder( bot : TelegramBot, update : Update, state : Telegram
     bot.sendMessage( update.get_chat().get_id(), msg  )
 
 
-# /start command responder 
-@processor(
-    state_manager,
-    from_states = [ 'waiting_for_start_command',],
-    update_types = [ update_types.EditedMessage, update_types.Message ],
-    message_types = [ message_types.Text, ],
-    # success = 'sent_start',
-)
-def respond_to_start( bot : TelegramBot, update : Update, state : TelegramState):
-    msg = 'Welcome to Farm Finance Token.Please check out the  /procedures to qualify for our upcoming airdrop'
-    if  not (str(update.get_message().get_text()) in valid_commands ):
-        msg = "Please send a valid command.Send /commands to see available commands"
-        bot.sendMessage( update.get_chat().get_id(), msg )
+# # /start command responder 
+# @processor(
+#     state_manager,
+#     from_states = [ 'waiting_for_start_command',],
+#     update_types = [ update_types.EditedMessage, update_types.Message ],
+#     message_types = [ message_types.Text, ],
+#     # success = 'sent_start',
+# )
+# def respond_to_start( bot : TelegramBot, update : Update, state : TelegramState):
+#     msg = 'Welcome to Farm Finance Token.Please check out the  /procedures to qualify for our upcoming airdrop'
+#     if  not (str(update.get_message().get_text()) in valid_commands ):
+#         msg = "Please send a valid command.Send /commands to see available commands"
+#         bot.sendMessage( update.get_chat().get_id(), msg )
     
-    bot.sendMessage( update.get_chat().get_id(), msg)
+#     bot.sendMessage( update.get_chat().get_id(), msg)
 
 
 
