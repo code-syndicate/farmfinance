@@ -32,7 +32,7 @@ def begin( bot : TelegramBot, update : Update, state : TelegramState):
     fail = state_types.Keep,
 )
 def start(bot : TelegramBot, update : Update, state : TelegramState):
-    chat_msg = state.get_message().get_text()
+    chat_msg = str(state.get_message().get_text())
     if chat_msg == '/start':
         msg = "Welcome to FarmFinance,follow these /procedures to qualify for our airdrop.Send /commands for a list of available commands."
         bot.sendMessage( update.get_chat().get_id(), msg )
