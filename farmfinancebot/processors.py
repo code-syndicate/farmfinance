@@ -99,7 +99,8 @@ def command_processor(bot, update, state):
     elif command == '/proceed':
         msg = " \U00002714 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
-        bot.sendMessage(update.get_chat().get_id(), msg )
+        bot.sendMessage(update.get_chat().get_id(), msg  )
+        state.set_name('waiting_for_wallet_address')
         # else:
 
         #     reply = 'You are not yet eligible for withdrawal \U0000274c Please make sure you have completed all tasks, then try again later.Thank you.'
@@ -127,7 +128,7 @@ def command_processor(bot, update, state):
     from_states='waiting_for_wallet_address',
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
-    success=state_types.Keep,
+    success= 'waiting_for_twitter_username',
     fail=state_types.Keep,
 
 )
@@ -139,7 +140,7 @@ def wallet_processor(bot, update, state):
         raise ProcessFailure
     else:
         msg = "Enter your twitter username"
-        state.set_name('waiting_for_twitter_username')
+        # state.set_name('waiting_for_twitter_username')
         bot.sendMessage(update.get_chat().get_id(), msg)
 
 
@@ -151,7 +152,7 @@ def wallet_processor(bot, update, state):
     from_states='waiting_for_twitter_username',
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
-    success=state_types.Keep,
+    success=  'submitted_twitter_name',
     fail=state_types.Keep,
 
 )
