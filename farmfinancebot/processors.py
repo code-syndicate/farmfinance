@@ -10,28 +10,30 @@ valid_commands = [
     '/menu',
     '/account',
     '/withdraw',
+    '/procedures'
+    
 ]
 
 
-# First Time chat responder
-@processor(
-    state_manager,
-    from_states=state_types.Reset,
-    update_types=[update_types.EditedMessage, update_types.Message],
-    message_types=message_types.Text,
-    success='waiting_for_start_command',
-    fail=state_types.Keep,
+# # First Time chat responder
+# @processor(
+#     state_manager,
+#     from_states=state_types.Reset,
+#     update_types=[update_types.EditedMessage, update_types.Message],
+#     message_types=message_types.Text,
+#     success='waiting_for_start_command',
+#     fail=state_types.Keep,
 
-)
-def begin(bot: TelegramBot, update: Update, state: TelegramState):
-    msg = "Hello, welcome to Farm Finance.Click /start to get started"
-    bot.sendMessage(update.get_chat().get_id(), msg)
+# )
+# def begin(bot: TelegramBot, update: Update, state: TelegramState):
+#     msg = "Hello, welcome to Farm Finance.Click /start to get started"
+#     bot.sendMessage(update.get_chat().get_id(), msg)
 
 
 # Start Command acceptor
 @processor(
     state_manager,
-    from_states='waiting_for_start_command',
+    from_states=[ 'waiting_for_start_command', state_types.Reset ],
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
     success='command_mode',
@@ -40,10 +42,10 @@ def begin(bot: TelegramBot, update: Update, state: TelegramState):
 def start(bot, update, state):
     chat_msg = str(update.get_message().get_text())
     if chat_msg == '/start':
-        msg = "Welcome to FarmFinance Airdrop,follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
+        msg = "Welcome to FarmFinance Airdrop, follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
         bot.sendMessage(update.get_chat().get_id(), msg)
     else:
-        msg = 'Please send /start to get started.'
+        msg = "Hello, welcome to Farm Finance.Click /start to get started"
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
@@ -62,7 +64,7 @@ def command_processor(bot, update, state):
     chat_msg = str(update.get_message().get_text())
 
     if not( chat_msg in valid_commands ):
-        msg = 'Please send a valid option'
+        msg = 'Please send a valid option. Send /menu for commands'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     
@@ -75,10 +77,14 @@ def command_processor(bot, update, state):
     elif command == '/account':
         reply = 'Here is your account info.\n\n Referrals : 3\nWithdrawal status : You are not yet qualified for withdrawal'
         bot.sendMessage(update.get_chat().get_id(), reply )
-        
+
     elif command == '/withdraw':
         reply = 'You are not yet qualified for withdrawal, you need two more referrals to go.'
         bot.sendMessage(update.get_chat().get_id(), reply )
+    
+    elif command == '/procedures':
+        reply = "Follow  these procedures to qualify for our airdrop\n\n1. Refer at least two persons\n2.Initiate withdrawal and supply your wallet address.\n\nThat's all."
+        bot.sendMessage(update.get_chat().get_id(),  reply )
     
 
 
