@@ -18,7 +18,7 @@ from .bot import TelegramBot
 
 )
 def begin( bot : TelegramBot, update : Update, state : TelegramState):
-    msg = "Hello!, welcome to Farm Finance.Click /start to get started"
+    msg = "Hello, welcome to Farm Finance.Click /start to get started"
     bot.sendMessage( update.get_chat().get_id(), msg  )
 
 
@@ -29,15 +29,15 @@ def begin( bot : TelegramBot, update : Update, state : TelegramState):
     update_types = [ update_types.EditedMessage, update_types.Message],
     message_types = message_types.Text,
     success = 'started_bot',
-    fail = state_types.Keep,
+    fail = state_types.Reset,
 )
 def start(bot , update , state ):
     chat_msg = str(update.get_message().get_text())
     if chat_msg == '/start':
-        msg = "Welcome to FarmFinance,follow these /procedures to qualify for our airdrop.Send /commands for a list of available commands."
+        msg = "Welcome to FarmFinance,follow the /procedures to qualify for our airdrop.Send /commands for a list of available commands"
         bot.sendMessage( update.get_chat().get_id(), msg )
     else:
-        msg = 'Please send a valid command.Check /commands'
+        msg = 'Please send /start to get started.'
         bot.sendMessage( update.get_chat().get_id(), msg)
         raise ProcessFailure
 
