@@ -113,11 +113,13 @@ def command_processor(bot, update, state):
     elif command == '/procedures':
         reply = "Follow  the following procedures to receive your airdrop.\n\n"
         msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
-        msg2 = '\U00002733 Join our telegram group at http://t.me/farmfinancebsc/\n\n\U00002733 Join our telegram channel at http://t.me/farmfinanceupdates/.\n\n'
+        msg2 = "\U00002733 Join our telegram group at <a href = 'http://t.me/farmfinancebsc/\n\n\U00002733'>  group </a>  Join our telegram channel at http://t.me/farmfinanceupdates/.\n\n"
         msg3 = '\U00002733 Follow our twitter account at http://twitter.com/farm_financeBsc/\n\n\U00002733 Like and retweet our pinned tweet about the airdrop on twitter.\n\n '
         msg4 = '\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
         reply += msg1 + msg2 + msg3 + msg4
-        bot.sendMessage(update.get_chat().get_id(),  reply )
+        bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
+
+
     
 
 
