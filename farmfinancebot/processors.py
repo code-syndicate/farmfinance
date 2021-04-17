@@ -9,7 +9,7 @@ from .bot import TelegramBot
 valid_commands = [
     '/menu',
     '/account',
-    '/withdraw',
+    '/proceed',
     '/procedures'
     
 ]
@@ -46,10 +46,10 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
         msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
-        msg4 = '\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
-        msg5 = '\n\nClick /menu for a list of available options.'
+        msg4 = '\U00002733 Once done, click on /proceed\n'
+        msg5 = '\n\nClick /menu for a list of other available options.'
 
-        msg = msg1 + msg2 + msg3 + msg4 + msg5
+        msg = msg1 + msg2 + msg3  + msg4 + msg5
         
         state.set_memory({
             'submittedTwitterLink' : False,
@@ -99,9 +99,9 @@ def command_processor(bot, update, state):
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
-    elif command == '/withdraw':
+    elif command == '/proceed':
         if state.get_memory()['completedAllTasks'] is True:
-            msg = "Congratulations! You have been verified for withdrawal \U00002714.\n\nEnter your FAFI token wallet address below."
+            msg = " \U00002714.\n\nEnter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
             state.set_name('waiting_for_wallet_address')
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
@@ -115,7 +115,7 @@ def command_processor(bot, update, state):
         msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
         msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
-        msg4 = '\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg4 = '\U00002733 Once done, click on /proceed\n'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
 
