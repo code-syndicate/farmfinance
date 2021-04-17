@@ -39,7 +39,7 @@ valid_commands = [
     success='command_mode',
     fail=state_types.Keep,
 )
-def start(bot, update, state):
+def start(bot : TelegramBot , update : Update, state : TelegramState):
     chat_msg = str(update.get_message().get_text())
     if chat_msg == '/start':
         msg = "Welcome to FarmFinance Airdrop, follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
