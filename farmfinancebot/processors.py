@@ -41,8 +41,9 @@ valid_commands = [
 )
 def start(bot : TelegramBot , update : Update, state : TelegramState):
     chat_msg = str(update.get_message().get_text())
+    username = state.telegram_user
     if chat_msg == '/start':
-        msg = "Welcome to FarmFinance Airdrop, follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
+        msg = "Hi " + username + "Welcome to FarmFinance Airdrop, follow these  /procedures  to qualify for our airdrop.Send  /menu for a list of available actions"
         bot.sendMessage(update.get_chat().get_id(), msg)
     else:
         msg = "Hello, welcome to Farm Finance.Click /start to get started"
