@@ -143,6 +143,9 @@ def wallet_processor(bot, update, state):
     else:
         msg = "\U00002733 Enter your twitter username"
         # state.set_name('waiting_for_twitter_username')
+        state.set_memory({
+            'Wallet Adress' : addr,
+        })
         bot.sendMessage(update.get_chat().get_id(), msg)
 
 
@@ -169,6 +172,9 @@ def twitter_username_processor(bot, update, state):
         msg2 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign "
         msg = msg1 + msg2
         state.set_name('submitted_twitter_name')
+        state.set_memory({
+            'Twitter Username' :  uname,
+        })
         bot.sendMessage(update.get_chat().get_id(), msg)
 
   
