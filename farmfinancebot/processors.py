@@ -10,7 +10,8 @@ valid_commands = [
     '/menu',
     '/account',
     '/proceed',
-    '/procedures'
+    '/procedures',
+    '/withdraw',
     
 ]
 
@@ -93,10 +94,11 @@ def command_processor(bot, update, state):
             info = "You have  been verified for withdrawal \U00002714"
         else:
             info = "You are not yet eligible for withdrawal \U0000274c"
+            
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
-    elif command == '/proceed':
+    elif command == '/proceed' or command =='/withdraw':
         msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
         bot.sendMessage(update.get_chat().get_id(), msg  )
