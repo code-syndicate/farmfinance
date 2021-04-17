@@ -44,7 +44,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
-        msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
+        msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/.\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
         msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
         msg4 = '4. Use our FarmFinance logo as your profile picture on telegram and twitter.'
         msg5 = '\n\nSend /menu for a list of available options.'
