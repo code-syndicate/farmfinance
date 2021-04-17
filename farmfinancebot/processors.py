@@ -44,9 +44,9 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
-        msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/.\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
-        msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
-        msg4 = '\n5. Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg2 = '\U00002733 Join our telegram group at http://t.me/farmfinancebsc/.\n\U00002733 Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
+        msg3 = '\U00002733 Follow our twitter account at http://twitter.com/farm_financeBsc/\n\U00002733 Like and retweet our pinned tweet about the airdrop on twitter. '
+        msg4 = '\n\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
         msg5 = '\n\nClick /menu for a list of available options.'
 
         msg = msg1 + msg2 + msg3 + msg4 + msg5
@@ -93,15 +93,15 @@ def command_processor(bot, update, state):
     elif command == '/account':
         info = ""
         if state.get_memory()['completedAllTasks'] is True:
-            info = "You have  been verified for withdrawal."
+            info = "You have  been verified for withdrawal \U00002714."
         else:
-            info = "You are not yet eligible for withdrawal."
+            info = "You are not yet eligible for withdrawal \U0000274c."
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/withdraw':
         if state.get_memory()['completedAllTasks'] is True:
-            msg = "Congratulations! You have been verified for withdrawal.\n\nEnter your FAFI token wallet address below."
+            msg = "Congratulations! \U+1F60D You have been verified for withdrawal \U00002714.\n\nEnter your FAFI token wallet address below."
             state.set_name('waiting_for_wallet_address')
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
