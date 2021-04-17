@@ -97,7 +97,7 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/proceed':
-        msg = " \U00002714 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+        msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
         bot.sendMessage(update.get_chat().get_id(), msg  )
         state.set_name('waiting_for_wallet_address')
@@ -135,11 +135,11 @@ def command_processor(bot, update, state):
 def wallet_processor(bot, update, state):
     addr = str(update.get_message().get_text())
     if len(addr) < 30 or not( addr.isalnum() ):
-        msg = "Please enter a valid wallet address"
+        msg = "\U0000274c Please enter a valid wallet address"
         bot.sendMessage(update.get_chat().get_id(), msg )
         raise ProcessFailure
     else:
-        msg = "Enter your twitter username"
+        msg = "\U00002733 Enter your twitter username"
         # state.set_name('waiting_for_twitter_username')
         bot.sendMessage(update.get_chat().get_id(), msg)
 
@@ -152,18 +152,19 @@ def wallet_processor(bot, update, state):
     from_states='waiting_for_twitter_username',
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
-    success=  'submitted_twitter_name',
+    # success=  'submitted_twitter_name',
     fail=state_types.Keep,
 
 )
 def twitter_username_processor(bot, update, state):
     uname = str(update.get_message().get_text())
     if len(uname) > 25 or uname.isdigit():
-        msg = "Please enter a valid twitter username"
+        msg = "\U0000274c Please enter a valid twitter username"
         bot.sendMessage(update.get_chat().get_id(), msg )
         raise ProcessFailure
     else:
-        msg = "Congratulations! You have successful applied for the FAFI airdrop."
+        msg = "\U00002764 Congratulations! You have successfully applied for the FAFI Airdrop campaign.\n"
+        msg1 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign "
         state.set_name('submitted_twitter_name')
         bot.sendMessage(update.get_chat().get_id(), msg)
 
