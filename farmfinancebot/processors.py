@@ -8,4 +8,6 @@ from .bot import TelegramBot
 
 @processor(state_manager, from_states=state_types.All)
 def hello_world(bot: TelegramBot, update: Update, state: TelegramState):
+    msg = "Hello, welcome to Farm Finance. Please complete the necessary conditions " + 
+    "to qualify for our upcoming airdrop. Send /info for more info"
     bot.sendMessage(update.get_chat().get_id(), 'Hello!')
