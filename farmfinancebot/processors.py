@@ -90,7 +90,12 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/account':
-        reply = 'Here is your account info\n\nWithdrawal status : You are not yet qualified for withdrawal'
+        info = ""
+        if state.get_memory()['completetedAllTasks'] is True:
+            info = "You have not been verified for withdrawal"
+        else:
+            info = "You have been verified for withdrawal"
+        reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/withdraw':
