@@ -7,6 +7,9 @@ from django_tgbot.models import AbstractTelegramUser, AbstractTelegramChat, Abst
 class TelegramUser(AbstractTelegramUser):
     pass
 
+    def __str__(self):
+        
+
 
 class TelegramChat(AbstractTelegramChat):
     pass
@@ -18,4 +21,7 @@ class TelegramState(AbstractTelegramState):
 
     class Meta:
         unique_together = ('telegram_user', 'telegram_chat')
+
+    def __str__(self):
+        return self.telegram_user.first_name + ',s chat state'   + str(self.telegram_id)
 
