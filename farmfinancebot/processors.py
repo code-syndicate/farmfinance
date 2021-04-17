@@ -163,8 +163,9 @@ def twitter_username_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), msg )
         raise ProcessFailure
     else:
-        msg = "\U00002764 Congratulations! You have successfully applied for the FAFI Airdrop campaign.\n"
-        msg1 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign "
+        msg1 = "\U00002764 Congratulations! You have successfully applied for the FAFI Airdrop campaign.\n"
+        msg2 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign "
+        msg = msg1 + msg2
         state.set_name('submitted_twitter_name')
         bot.sendMessage(update.get_chat().get_id(), msg)
 
