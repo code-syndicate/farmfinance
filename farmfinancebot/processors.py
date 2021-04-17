@@ -33,7 +33,7 @@ valid_commands = [
 # Start Command acceptor
 @processor(
     state_manager,
-    from_states=[ 'waiting_for_start_command', state_types.Reset ],
+    from_states=  state_types.Reset,
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
     success='command_mode',
