@@ -159,7 +159,7 @@ DJANGO_TELEGRAMBOT = {
                         # a management command that starts a worker
 
     'WEBHOOK_SITE' : 'http://farmfinance.trade',
-    'WEBHOOK_PREFIX' : '/telegram_bot', # (Optional[str]) # If this value is specified,
+    'WEBHOOK_PREFIX' : '', # (Optional[str]) # If this value is specified,
                                   # a prefix is added to webhook url
 
     #'WEBHOOK_CERTIFICATE' : 'cert.pem', # If your site use self-signed

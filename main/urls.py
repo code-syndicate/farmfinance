@@ -6,8 +6,9 @@ from django.conf.urls.static import static
 app_name = 'main'
 
 urlpatterns = [
+    path('', include('django_telegrambot.urls')),
     path('', views.IndexView, name = 'indexview'),
     path('tokenomics/', views.TokenomicsView, name = 'tokenomics'),
-    path('telegram_bot/', include('django_telegrambot.urls')),
+    
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
