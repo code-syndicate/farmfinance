@@ -46,8 +46,8 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/.\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
         msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
-        msg4 = '4. Use our FarmFinance logo as your profile picture on telegram and twitter.'
-        msg5 = '\n\nSend /menu for a list of available options.'
+        msg4 = '\n5. Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg5 = '\n\n\nlick /menu for a list of available options.'
 
         msg = msg1 + msg2 + msg3 + msg4 + msg5
         
@@ -80,7 +80,7 @@ def command_processor(bot, update, state):
     username = state.telegram_user.first_name.capitalize()
 
     if not( chat_msg in valid_commands ):
-        msg = 'Please send a valid action. Send /menu for available options.'
+        msg = 'Please send a valid action.Click /menu for available options.'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     
@@ -111,11 +111,11 @@ def command_processor(bot, update, state):
             raise ProcessFailure
     
     elif command == '/procedures':
-        reply = "Follow  the following procedures to receive your airdrop.\n"
+        reply = "Follow  the following procedures to receive your airdrop.\n\n"
         msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
         msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
-        msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
-        msg4 = '4. Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter.\n '
+        msg4 = '5. Use our FarmFinance logo as your profile picture on telegram and twitter.'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply )
     
