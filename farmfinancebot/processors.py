@@ -79,10 +79,7 @@ def command_processor(bot, update, state):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
 
-    if not( chat_msg in valid_commands ):
-        msg = 'Please send a valid action.Click /menu for available options.'
-        bot.sendMessage(update.get_chat().get_id(), msg)
-        raise ProcessFailure
+    
     
     command = chat_msg
 
@@ -117,6 +114,11 @@ def command_processor(bot, update, state):
         msg4 = '\U00002733 Once done, click on /proceed\n'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
+
+    elif not( chat_msg in valid_commands ):
+        msg = 'Please send a valid action.Click /menu for available options.'
+        bot.sendMessage(update.get_chat().get_id(), msg)
+        raise ProcessFailure
 
 
 #  wallet Acceptor   
