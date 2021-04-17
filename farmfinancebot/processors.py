@@ -17,7 +17,7 @@ valid_commands = [
 # First Time chat responder 
 @processor(
     state_manager,
-    from_states = [ state_types.Reset,  ], 
+    from_states = [ state_types.Reset, state_types.All  ], 
     update_types = [ update_types.EditedMessage, update_types.Message ], 
     message_types = [ message_types.Text, ],
     success = 'waiting_for_start_command',
