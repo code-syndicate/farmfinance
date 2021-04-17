@@ -71,7 +71,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     from_states='command_mode',
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
-    success=state_types.Keep,
+    # success= 'waiting_for_wallet_address',
     fail=state_types.Keep,
 
 )
