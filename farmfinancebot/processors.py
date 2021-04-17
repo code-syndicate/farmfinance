@@ -47,7 +47,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
         msg2 = '1. Join our telegram group at http://t.me/farmfinancebsc/.\n2. Join our telegram channel at http://t.me/farmfinanceupdates/.\n'
         msg3 = '3. Follow our twitter account at http://twitter.com/farm_financeBsc/\n4. Like and retweet our pinned tweet about the airdrop on twitter. '
         msg4 = '\n5. Use our FarmFinance logo as your profile picture on telegram and twitter.'
-        msg5 = '\n\n\nlick /menu for a list of available options.'
+        msg5 = '\n\nClick /menu for a list of available options.'
 
         msg = msg1 + msg2 + msg3 + msg4 + msg5
         
