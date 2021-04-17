@@ -58,7 +58,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
 
         bot.sendMessage(update.get_chat().get_id(), msg)
     else:
-        msg = "Hello, welcome to Farm Finance.Click /start to get started"
+        msg = "Hello " + username + ", welcome to Farm Finance.Click  /start  to get started."
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
