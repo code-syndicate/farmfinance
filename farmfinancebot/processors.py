@@ -54,7 +54,7 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
             'submittedTwitterLink' : False,
             'setLogo' : False,
             'RetweetedPost' : False,
-            'completetedAllTasks' : False,
+            'completedAllTasks' : False,
         })
 
         bot.sendMessage(update.get_chat().get_id(), msg)
@@ -91,7 +91,7 @@ def command_processor(bot, update, state):
 
     elif command == '/account':
         info = ""
-        if state.get_memory()['completetedAllTasks'] is True:
+        if state.get_memory()['completedAllTasks'] is True:
             info = "You have not been verified for withdrawal"
         else:
             info = "You have been verified for withdrawal"
@@ -99,7 +99,7 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply )
 
     elif command == '/withdraw':
-        if state.get_memory()['completetedAllTasks'] is True:
+        if state.get_memory()['completedAllTasks'] is True:
             msg = "Congratulations! You have been verified for withdrawal.\n\nEnter your FAFI token wallet address below."
             state.set_name('waiting_for_wallet_address')
             bot.sendMessage(update.get_chat().get_id(), msg )
