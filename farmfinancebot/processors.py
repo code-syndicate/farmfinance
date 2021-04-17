@@ -44,9 +44,9 @@ def start(bot : TelegramBot , update : Update, state : TelegramState):
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\nComplete the tasks below to get up to $50 FAFI token.\n\n"
-        msg2 = '\U00002733 Join our telegram group at http://t.me/farmfinancebsc/.\n\n\U00002733 Join our telegram channel at http://t.me/farmfinanceupdates/.\n\n'
-        msg3 = '\U00002733 Follow our twitter account at http://twitter.com/farm_financeBsc/\n\n\U00002733 Like and retweet our pinned tweet about the airdrop on twitter. '
-        msg4 = '\n\n\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
+        msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
+        msg4 = '\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
         msg5 = '\n\nClick /menu for a list of available options.'
 
         msg = msg1 + msg2 + msg3 + msg4 + msg5
@@ -113,8 +113,8 @@ def command_processor(bot, update, state):
     elif command == '/procedures':
         reply = "Follow  the following procedures to receive your airdrop.\n\n"
         msg1 = "Complete the tasks below to get up to $50 FAFI token.\n\n"
-        msg2 = "\U00002733 Join our telegram group at <a href = 'http://t.me/farmfinancebsc/\n\n\U00002733'>  group </a>  Join our telegram channel at http://t.me/farmfinanceupdates/.\n\n"
-        msg3 = '\U00002733 Follow our twitter account at http://twitter.com/farm_financeBsc/\n\n\U00002733 Like and retweet our pinned tweet about the airdrop on twitter.\n\n '
+        msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group  </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
+        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, retweet the pinned tweet about our airdrop.\n\n "
         msg4 = '\U00002733 Use our FarmFinance logo as your profile picture on telegram and twitter.'
         reply += msg1 + msg2 + msg3 + msg4
         bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
