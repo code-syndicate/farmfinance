@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('', views.IndexView, name = 'indexview'),
     path('tokenomics/', views.TokenomicsView, name = 'tokenomics'),
-    path('farmfinancebot/', include(farmfinancebot_urls))
+    path('farmfinancebot/', include(farmfinancebot_urls)),
     
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
