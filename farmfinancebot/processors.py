@@ -93,9 +93,9 @@ def command_processor(bot, update, state):
     elif command == '/account':
         info = ""
         if state.get_memory()['completedAllTasks'] is True:
-            info = "You have  been verified for withdrawal"
+            info = "You have  been verified for withdrawal."
         else:
-            info = "You have not been verified for withdrawal"
+            info = "You are not yet eligible for withdrawal."
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply )
 
@@ -106,7 +106,7 @@ def command_processor(bot, update, state):
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
 
-            reply = 'You have  not  been verified for withdrawal by the admins.Please make sure you have completed all tasks, then try again later.Thank you.'
+            reply = 'You are not yet eligible for withdrawal.Please make sure you have completed all tasks, then try again later.Thank you.'
             bot.sendMessage(update.get_chat().get_id(), reply )
             raise ProcessFailure
     
