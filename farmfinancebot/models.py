@@ -21,6 +21,4 @@ class TelegramState(AbstractTelegramState):
     class Meta:
         unique_together = ('telegram_user', 'telegram_chat')
 
-    def __str__(self):
-        return self.telegram_user.first_name + ',s chat state'   + str(self.telegram_id)
 
