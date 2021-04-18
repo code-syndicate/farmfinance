@@ -52,7 +52,7 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/Start' or chat_msg == '/start':
         msg1 = "Hello " + username + " \U000026C4 , I am your friendly Farm Finance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1 USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
-        msg0 = '\U00002744 No referrals needed to qualify\n\n\nClick /Proceed to continue'
+        msg0 = '\U00002744 No referrals needed \n\n\nClick /Proceed to continue'
         
         msg = msg1 + msg0 
 
@@ -93,7 +93,7 @@ def command_processor(bot, update, state):
             state.update_memory({
                 'saidHi' : True
             })
-            msg = "\U00002744 Send 'Hi' to the <a href = 'http://t.me/farmfinancebsc/'> group </a>\n\nOnce done, click /Continue"
+            msg = "\U00002744 Send 'Hi' to the <a href = 'http://t.me/farmfinancebsc/'> group chat </a>\n\nOnce done, click /Continue"
             bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
             raise ProcessFailure
 
