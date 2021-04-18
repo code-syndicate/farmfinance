@@ -87,8 +87,9 @@ def command_processor(bot, update, state):
 
     if command == '/continue':
         if state.name == "asked_for_telegram_join":
-            msg = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
+            msg1 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
             msg2 = "\n\nClick /done to finish"
+            msg = msg1 + msg2
             state.set_name('asked_for_twitter_join')
             bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
         else:
@@ -157,7 +158,7 @@ def wallet_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
-        msg = "\U00002733 Enter your twitter username"
+        msg = "\U00002733 Enter your twitter username, ex. @drake"
         # state.set_name('waiting_for_twitter_username')
         state.set_memory({
             'Wallet Adress': addr,
@@ -178,8 +179,8 @@ def wallet_processor(bot, update, state):
 )
 def twitter_username_processor(bot, update, state):
     uname = str(update.get_message().get_text())
-    if len(uname) > 25 or uname.isdigit():
-        msg = "\U0000274c Please enter a valid twitter username"
+    if len(uname) > 25 or uname.isdigit() or (uname.index('@') == -1) or not (uname[0] == '@'):
+        msg = "\U0000274c Please enter a valid twitter username, ex. @jack23"
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
