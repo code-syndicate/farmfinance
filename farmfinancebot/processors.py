@@ -138,7 +138,7 @@ def command_processor(bot, update, state):
                         parse_mode=TelegramBot.PARSE_MODE_HTML)
 
     elif not(chat_msg in valid_commands):
-        msg = 'Please send a valid action.Click /Menu for available options.'
+        msg = ' \U0000203C You are the user of the this bot already.Please continue from where you last stopped \U0000203C'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
@@ -204,8 +204,8 @@ def twitter_username_processor(bot, update, state):
 @processor(
     state_manager,
     from_states= state_types.All,
-    update_types= update_types.Message,
-    message_types = message_types.NewChatMembers,
+    update_types= [ update_types.Message, update_types.ChannelPost, ],
+    message_types = [ message_types.NewChatMembers, message_types.Text ],
     # success=  'submitted_twitter_name',
     fail=state_types.Keep,
 
