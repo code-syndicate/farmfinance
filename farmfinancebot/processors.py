@@ -114,9 +114,13 @@ def command_processor(bot, update, state):
         if key :
             msg = "\U00002744 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
             state.set_name('waiting_for_wallet_address')
+            
             bot.sendMessage(update.get_chat().get_id(), msg )
         else:
-            msg = "	\U00002755 Please ensure you have completed all tasks or you won't be eligible for the Airdrop."
+            msg = "	\U00002757 Please ensure you have completed all tasks or you won't be eligible for the Airdrop.\n\nCheck again and click /Next to continue"
+            state.update_memory({
+                'warned' : True
+            })
             bot.sendMessage(update.get_chat().get_id(), msg)
             raise ProcessFailure
 
