@@ -30,6 +30,11 @@ valid_commands = [
 #     msg = "Hello, welcome to Farm Finance.Click /start to get started"
 #     bot.sendMessage(update.get_chat().get_id(), msg)
 
+# msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
+#         msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
+#         msg4 = '\U00002733 Once done, click on /proceed\n'
+#         msg5 = '\n\nClick /menu for a list of other available options.'
+
 
 # Start Command acceptor
 @processor(
@@ -44,14 +49,10 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
-        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n1 FAFI = 1USD\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n "
-        msg0 = 'No referrals needed to qualify\n\n'
-        msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
-        msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
-        msg4 = '\U00002733 Once done, click on /proceed\n'
-        msg5 = '\n\nClick /menu for a list of other available options.'
-
-        msg = msg1 + msg0 + msg2 + msg3 + msg4 + msg5
+        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
+        msg0 = 'No referrals needed to qualify\n\n\nClick /proceed to continue'
+        
+        msg = msg1 + msg0 
 
         state.set_memory({
             'submittedTwitterLink': False,
@@ -98,11 +99,14 @@ def command_processor(bot, update, state):
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply)
 
-    elif command == '/proceed' or command == '/withdraw':
-        msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+    elif command == '/proceed':
+        msg1 = "\U00002733 \U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
+        msg2 = "Once done, click /continue"
+        msg = msg1 + msg2
+        # msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
         bot.sendMessage(update.get_chat().get_id(), msg)
-        state.set_name('waiting_for_wallet_address')
+        # state.set_name('waiting_for_wallet_address')
         # else:
 
         #     reply = 'You are not yet eligible for withdrawal \U0000274c Please make sure you have completed all tasks, then try again later.Thank you.'
@@ -168,8 +172,8 @@ def twitter_username_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
-        msg1 = "\U00002764 Congratulations! You have successfully applied for the FAFI Airdrop campaign.\n"
-        msg2 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign "
+        msg1 = "\U00002714 Congratulations! You have successfully completed the tasks for the FAFI Airdrop campaign.\n\n"
+        msg2 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign when it is time for distribution. "
         msg = msg1 + msg2
         state.set_name('submitted_twitter_name')
         state.set_memory({
