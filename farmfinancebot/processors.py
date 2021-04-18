@@ -60,9 +60,9 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
             'completedAllTasks': False,
         })
 
-        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML, reply_markup=ReplyKeyboardMarkup.a([
+        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML, reply_markup = ReplyKeyboardMarkup.a([
 
-            [KeyboardButton.a('Left Button'), KeyboardButton.a('Right Button')]
+            [ KeyboardButton.a('Left Button'), KeyboardButton.a('Right Button')]
 
         ]))
     else:
