@@ -214,3 +214,4 @@ def joined_processor(bot, update, state):
     state.update_memory({
         'joinedGroup' : True
     })
+    bot.sendMessage(update.get_chat().get_id(), "Welcome to our group")
