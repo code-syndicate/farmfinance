@@ -93,7 +93,7 @@ def command_processor(bot, update, state):
             state.update_memory({
                 'saidHi' : True
             })
-            msg = "Send 'Hi' to the <a href = 'http://t.me/farmfinancebsc/'> group </a>"
+            msg = "\U00002744 Send 'Hi' to the <a href = 'http://t.me/farmfinancebsc/'> group </a>\n\nOnce done, click /Continue"
             bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
             raise ProcessFailure
 
