@@ -88,6 +88,15 @@ def command_processor(bot, update, state):
     command = chat_msg
 
     if command == '/Continue':
+        key = state.get_memory().get('saidHi', None)
+        if key is None:
+            state.update_memory({
+                'saidHi' : True
+            })
+            msg = "Send 'Hi' to the <a href = 'http://t.me/farmfinancebsc/'> group </a>"
+            bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
+            raise ProcessFailure
+
         if state.name == "asked_for_telegram_join":
             msg1 = "\U00002744 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
             msg2 = "\n\n Once done, click /Next "
