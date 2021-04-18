@@ -12,7 +12,7 @@ valid_commands = [
     '/proceed',
     '/procedures',
     '/withdraw',
-    
+
 ]
 
 
@@ -34,34 +34,40 @@ valid_commands = [
 # Start Command acceptor
 @processor(
     state_manager,
-    from_states=  state_types.Reset,
+    from_states=state_types.Reset,
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
     success='command_mode',
     fail=state_types.Keep,
 )
-def start(bot : TelegramBot , update : Update, state : TelegramState):
+def start(bot: TelegramBot, update: Update, state: TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
-        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nComplete the tasks below to get up to $100 FAFI token.\n\n"
+        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n1 FAFI = 1USD\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n "
+        msg0 = 'No referrals needed to qualify\n\n'
         msg2 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n"
         msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         msg5 = '\n\nClick /menu for a list of other available options.'
 
-        msg = msg1 + msg2 + msg3  + msg4 + msg5
-        
+        msg = msg1 + msg0 + msg2 + msg3 + msg4 + msg5
+
         state.set_memory({
-            'submittedTwitterLink' : False,
-            'setLogo' : False,
-            'RetweetedPost' : False,
-            'completedAllTasks' : False,
+            'submittedTwitterLink': False,
+            'setLogo': False,
+            'RetweetedPost': False,
+            'completedAllTasks': False,
         })
 
-        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode =  TelegramBot.PARSE_MODE_HTML)
+        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML, reply_markup=ReplyKeyboardMarkup.a([
+
+            [KeyboardButton.a('Left Button'), KeyboardButton.a('Right Button')]
+
+        ]))
     else:
-        msg = "Hello " + username + " \U000026C4 , welcome to Farm Finance.Click  /start  to get started."
+        msg = "Hello " + username + \
+            " \U000026C4 , welcome to Farm Finance.Click  /start  to get started."
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
@@ -80,13 +86,11 @@ def command_processor(bot, update, state):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
 
-    
-    
     command = chat_msg
 
     if command == '/menu':
         reply = 'Here are the available actions.\n\n\U00002733Send /account for account info.\n\n\U00002733Send /withdraw  to request for withdrawal.'
-        bot.sendMessage(update.get_chat().get_id(), reply )
+        bot.sendMessage(update.get_chat().get_id(), reply)
 
     elif command == '/account':
         info = ""
@@ -96,19 +100,19 @@ def command_processor(bot, update, state):
             info = "You are not yet eligible for withdrawal \U0000274c"
 
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
-        bot.sendMessage(update.get_chat().get_id(), reply )
+        bot.sendMessage(update.get_chat().get_id(), reply)
 
-    elif command == '/proceed' or command =='/withdraw':
+    elif command == '/proceed' or command == '/withdraw':
         msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
-        bot.sendMessage(update.get_chat().get_id(), msg  )
+        bot.sendMessage(update.get_chat().get_id(), msg)
         state.set_name('waiting_for_wallet_address')
         # else:
 
         #     reply = 'You are not yet eligible for withdrawal \U0000274c Please make sure you have completed all tasks, then try again later.Thank you.'
         #     bot.sendMessage(update.get_chat().get_id(), reply )
         #     raise ProcessFailure
-    
+
     elif command == '/procedures':
         reply = "Follow  the following procedures to receive your airdrop.\n\n"
         msg1 = "Complete the tasks below to get up to $100 FAFI token.\n\n"
@@ -116,43 +120,42 @@ def command_processor(bot, update, state):
         msg3 = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned tweet about our airdrop.\n\n "
         msg4 = '\U00002733 Once done, click on /proceed\n'
         reply += msg1 + msg2 + msg3 + msg4
-        bot.sendMessage(update.get_chat().get_id(),  reply , parse_mode =  TelegramBot.PARSE_MODE_HTML )
+        bot.sendMessage(update.get_chat().get_id(),  reply,
+                        parse_mode=TelegramBot.PARSE_MODE_HTML)
 
-    elif not( chat_msg in valid_commands ):
+    elif not(chat_msg in valid_commands):
         msg = 'Please send a valid action.Click /menu for available options.'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
 
-#  wallet Acceptor   
+#  wallet Acceptor
 @processor(
     state_manager,
     from_states='waiting_for_wallet_address',
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
-    success= 'waiting_for_twitter_username',
+    success='waiting_for_twitter_username',
     fail=state_types.Keep,
 
 )
 def wallet_processor(bot, update, state):
     addr = str(update.get_message().get_text())
-    if len(addr) < 30 or not( addr.isalnum() ):
+    if len(addr) < 30 or not(addr.isalnum()):
         msg = "\U0000274c Please enter a valid wallet address"
-        bot.sendMessage(update.get_chat().get_id(), msg )
+        bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
         msg = "\U00002733 Enter your twitter username"
         # state.set_name('waiting_for_twitter_username')
         state.set_memory({
-            'Wallet Adress' : addr,
-            'completedAllTasks' : state.get_memory()['completedAllTasks'],
+            'Wallet Adress': addr,
+            'completedAllTasks': state.get_memory()['completedAllTasks'],
         })
         bot.sendMessage(update.get_chat().get_id(), msg)
 
 
-
-
-#  Twitter uanme Acceptor   
+#  Twitter uanme Acceptor
 @processor(
     state_manager,
     from_states='waiting_for_twitter_username',
@@ -166,7 +169,7 @@ def twitter_username_processor(bot, update, state):
     uname = str(update.get_message().get_text())
     if len(uname) > 25 or uname.isdigit():
         msg = "\U0000274c Please enter a valid twitter username"
-        bot.sendMessage(update.get_chat().get_id(), msg )
+        bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
         msg1 = "\U00002764 Congratulations! You have successfully applied for the FAFI Airdrop campaign.\n"
@@ -174,14 +177,8 @@ def twitter_username_processor(bot, update, state):
         msg = msg1 + msg2
         state.set_name('submitted_twitter_name')
         state.set_memory({
-            'Twitter Username' :  uname,
-             'completedAllTasks' : state.get_memory()['completedAllTasks'],
-             'Wallet Address' : state.get_memory()['Wallet Address'],
+            'Twitter Username':  uname,
+            'completedAllTasks': state.get_memory()['completedAllTasks'],
+            'Wallet Address': state.get_memory()['Wallet Address'],
         })
         bot.sendMessage(update.get_chat().get_id(), msg)
-
-  
-
-    
-
-
