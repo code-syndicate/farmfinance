@@ -10,8 +10,8 @@ valid_commands = [
     '/Continue',
     '/Account',
     '/Proceed',
-    '/Procedures',
-    '/Withdraw',
+    # '/Procedures',
+    # '/Withdraw',
     '/Next'
     
 
@@ -51,7 +51,7 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/Start' or chat_msg == '/start':
-        msg1 = "Hello " + username + ", I am your friendly Farm Finance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1 USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
+        msg1 = "Hello " + username + " \U000026C4 , I am your friendly Farm Finance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1 USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
         msg0 = '\U00002744 No referrals needed to qualify\n\n\nClick /Proceed to continue'
         
         msg = msg1 + msg0 
@@ -110,15 +110,22 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply)
 
     elif command == '/Next':
-        msg = "\U00002744 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
-        state.set_name('waiting_for_wallet_address')
-        bot.sendMessage(update.get_chat().get_id(), msg )
+        key = state.get_memory().get('warned',None)
+        if key :
+            msg = "\U00002744 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+            state.set_name('waiting_for_wallet_address')
+            bot.sendMessage(update.get_chat().get_id(), msg )
+        else:
+            msg = "	\U00002755 Please ensure you have completed all tasks or you won't be eligible for the Airdrop."
+            bot.sendMessage(update.get_chat().get_id(), msg)
+            raise ProcessFailure
 
     elif command == '/Proceed':
         msg1 = "\U00002744 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
         msg2 = " Once done, click /Continue"
         msg = msg1 + msg2
         state.set_name('asked_for_telegram_join')
+        
         bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML)
         # state.set_name('waiting_for_wallet_address')
         # else:
@@ -138,7 +145,7 @@ def command_processor(bot, update, state):
                         parse_mode=TelegramBot.PARSE_MODE_HTML)
 
     elif not(chat_msg in valid_commands):
-        msg = ' \U0000203C You are the user of the this bot already.Please continue from where you last stopped \U0000203C'
+        msg = ' \U0000203C You are a user of the this bot already.Please continue from where you last stopped \U0000203C'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
