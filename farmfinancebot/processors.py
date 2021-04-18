@@ -72,7 +72,7 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
 # Procedures Acceptor
 @processor(
     state_manager,
-    from_states='command_mode',
+    from_states= [ 'asked_for_telegram_join', 'command_mode','asked_for_twitter_join']
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
     # success= 'waiting_for_wallet_address',
@@ -89,7 +89,7 @@ def command_processor(bot, update, state):
         if state.name == "asked_for_telegram_join":
             msg = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
             state.set_name('asked_for_twitter_join')
-            bot.sendMessage(update.get_chat().get_id(), msg )
+            bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
         else:
             msg = "\U00002733 Please join telegram our group and channel before proceeding."
             bot.sendMessage(update.get_chat().get_id(), msg)
@@ -111,7 +111,7 @@ def command_processor(bot, update, state):
         msg = msg1 + msg2
         # msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('asked_for_telegram_join')
-        bot.sendMessage(update.get_chat().get_id(), msg)
+        bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML)
         # state.set_name('waiting_for_wallet_address')
         # else:
 
