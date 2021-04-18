@@ -196,3 +196,21 @@ def twitter_username_processor(bot, update, state):
             'Wallet Address': state.get_memory()['Wallet Address'],
         })
         bot.sendMessage(update.get_chat().get_id(), msg)
+
+
+
+
+#   User Joined Acceptor
+@processor(
+    state_manager,
+    from_states= state_types.All,
+    update_types= update_types.Message,
+    message_types = message_types.NewChatMembers,
+    # success=  'submitted_twitter_name',
+    fail=state_types.Keep,
+
+)
+def joined_processor(bot, update, state):
+    state.update_memory({
+        'joinedGroup' : True
+    })
