@@ -13,6 +13,7 @@ valid_commands = [
     '/Procedures',
     '/Withdraw',
     '/Next'
+    
 
 ]
 
@@ -49,9 +50,9 @@ valid_commands = [
 def start(bot: TelegramBot, update: Update, state: TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
-    if chat_msg == '/Start':
+    if chat_msg == '/Start' or chat_msg == '/start':
         msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1 USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
-        msg0 = '\U00002744 No referrals needed to qualify\n\n\nClick /proceed to continue'
+        msg0 = '\U00002744 No referrals needed to qualify\n\n\nClick /Proceed to continue'
         
         msg = msg1 + msg0 
 
@@ -65,7 +66,7 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
         bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML, )
     else:
         msg = "Hello " + username + \
-            " \U000026C4 , welcome to Farm Finance.Click  /start  to get started."
+            " \U000026C4 , welcome to Farm Finance.Click  /Start  to get started."
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
@@ -88,7 +89,7 @@ def command_processor(bot, update, state):
 
     if command == '/Continue':
         if state.name == "asked_for_telegram_join":
-            msg1 = "\\U00002744 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
+            msg1 = "\U00002744 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
             msg2 = "\n\n Once done, click /Next "
             msg = msg1 + msg2
             state.set_name('asked_for_twitter_join')
@@ -109,13 +110,13 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply)
 
     elif command == '/Next':
-        msg = " \U00002744 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+        msg = "\U00002744 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('waiting_for_wallet_address')
         bot.sendMessage(update.get_chat().get_id(), msg )
 
     elif command == '/Proceed':
         msg1 = "\U00002744 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
-        msg2 = "Once done, click /Continue"
+        msg2 = "\U00002744 Once done, click /Continue"
         msg = msg1 + msg2
         state.set_name('asked_for_telegram_join')
         bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML)
@@ -137,7 +138,7 @@ def command_processor(bot, update, state):
                         parse_mode=TelegramBot.PARSE_MODE_HTML)
 
     elif not(chat_msg in valid_commands):
-        msg = 'Please send a valid action.Click /menu for available options.'
+        msg = 'Please send a valid action.Click /Menu for available options.'
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
 
