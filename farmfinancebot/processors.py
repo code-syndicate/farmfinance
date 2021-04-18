@@ -49,8 +49,8 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
     chat_msg = str(update.get_message().get_text())
     username = state.telegram_user.first_name.capitalize()
     if chat_msg == '/start':
-        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
-        msg0 = 'No referrals needed to qualify\n\n\nClick /proceed to continue'
+        msg1 = "Hello " + username + ", I am your friendly FarmFinance Airdrop bot.\n\nPlease do the required tasks to get up to $100 FAFI token.\n\n\U00002744 1 FAFI = 1 USD\n\nFor joining the Airdrop and completing the task, you automatically qualify for our Airdrop tokens.\n\n "
+        msg0 = '\U00002744 No referrals needed to qualify\n\n\nClick /proceed to continue'
         
         msg = msg1 + msg0 
 
@@ -85,11 +85,17 @@ def command_processor(bot, update, state):
 
     command = chat_msg
 
-    if command == '/menu':
-        reply = 'Here are the available actions.\n\n\U00002733Send /account for account info.\n\n\U00002733Send /withdraw  to request for withdrawal.'
-        bot.sendMessage(update.get_chat().get_id(), reply)
+    if command == '/continue':
+        if state.name == "asked_for_telegram_join":
+            msg = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
+            state.set_name('asked_for_twitter_join')
+            bot.sendMessage(update.get_chat().get_id(), msg )
+        else:
+            msg = "\U00002733 Please join telegram our group and channel before proceeding."
+            bot.sendMessage(update.get_chat().get_id(), msg)
+            raise ProcessFailure
 
-    elif command == '/account':
+    if command == '/account':
         info = ""
         if state.get_memory()['completedAllTasks'] is True:
             info = "You have  been verified for withdrawal \U00002714"
@@ -100,11 +106,11 @@ def command_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), reply)
 
     elif command == '/proceed':
-        msg1 = "\U00002733 \U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
+        msg1 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
         msg2 = "Once done, click /continue"
         msg = msg1 + msg2
         # msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
-        state.set_name('waiting_for_wallet_address')
+        state.set_name('asked_for_telegram_join')
         bot.sendMessage(update.get_chat().get_id(), msg)
         # state.set_name('waiting_for_wallet_address')
         # else:
