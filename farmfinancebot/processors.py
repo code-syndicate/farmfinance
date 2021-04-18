@@ -7,7 +7,7 @@ from .models import TelegramState
 from .bot import TelegramBot
 
 valid_commands = [
-    '/menu',
+    '/continue',
     '/account',
     '/proceed',
     '/procedures',
@@ -88,6 +88,7 @@ def command_processor(bot, update, state):
     if command == '/continue':
         if state.name == "asked_for_telegram_join":
             msg = "\U00002733 Follow us on <a href = 'http://twitter.com/farm_financeBsc/'> twitter </a>, like and retweet the pinned post about our airdrop.\n\n "
+            msg2 = "\n\nClick /done to finish"
             state.set_name('asked_for_twitter_join')
             bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML )
         else:
@@ -105,11 +106,15 @@ def command_processor(bot, update, state):
         reply = 'Here is your account info\n\nWithdrawal status : ' + info
         bot.sendMessage(update.get_chat().get_id(), reply)
 
+    elif command == '/done':
+        msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
+        state.set_name('waiting_for_wallet_address')
+        bot.sendMessage(update.get_chat().get_id(), msg )
+
     elif command == '/proceed':
         msg1 = "\U00002733 Join our telegram <a href = 'http://t.me/farmfinancebsc/'> group </a> and  <a href = 'http://t.me/farmfinanceupdates/'> channel </a>.\n\n "
         msg2 = "Once done, click /continue"
         msg = msg1 + msg2
-        # msg = " \U00002733 Enter your Bep20 Binance smartchain address(ex. Trust Wallet, Metamask, etc, exchange wallets not applicable for airdrop)."
         state.set_name('asked_for_telegram_join')
         bot.sendMessage(update.get_chat().get_id(), msg, parse_mode=TelegramBot.PARSE_MODE_HTML)
         # state.set_name('waiting_for_wallet_address')
