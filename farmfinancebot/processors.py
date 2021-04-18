@@ -72,7 +72,7 @@ def start(bot: TelegramBot, update: Update, state: TelegramState):
 # Procedures Acceptor
 @processor(
     state_manager,
-    from_states= [ 'asked_for_telegram_join', 'command_mode','asked_for_twitter_join']
+    from_states= [ 'asked_for_telegram_join', 'command_mode','asked_for_twitter_join'],
     update_types=[update_types.EditedMessage, update_types.Message],
     message_types=message_types.Text,
     # success= 'waiting_for_wallet_address',
