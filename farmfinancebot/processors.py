@@ -186,7 +186,7 @@ def twitter_username_processor(bot, update, state):
         bot.sendMessage(update.get_chat().get_id(), msg)
         raise ProcessFailure
     else:
-        msg1 = " Congratulations! You have successfully completed the tasks for the FAFI Airdrop campaign.\n\n"
+        msg1 = "	\U00002728 Congratulations! You have successfully completed the tasks for the FAFI Airdrop campaign.\n\n"
         msg2 = "Tokens will be automatically distributed to the submitted wallet address at the end of the Airdrop campaign when it is time for distribution. "
         msg = msg1 + msg2
         state.set_name('submitted_twitter_name')
@@ -200,18 +200,18 @@ def twitter_username_processor(bot, update, state):
 
 
 
-#   User Joined Acceptor
-@processor(
-    state_manager,
-    from_states= state_types.All,
-    update_types= [ update_types.Message, update_types.ChannelPost, ],
-    message_types = [ message_types.NewChatMembers, message_types.Text ],
-    # success=  'submitted_twitter_name',
-    fail=state_types.Keep,
+# #   User Joined Acceptor
+# @processor(
+#     state_manager,
+#     from_states= 'asked_for_telegram_join',
+#     update_types= [ update_types.Message, update_types.ChannelPost, ],
+#     message_types = [ message_types.NewChatMembers, message_types.Text ],
+#     # success=  'submitted_twitter_name',
+#     fail=state_types.Keep,
 
-)
-def joined_processor(bot, update, state):
-    state.update_memory({
-        'joinedGroup' : True
-    })
-    bot.sendMessage(update.get_chat().get_id(), "Welcome to our group")
+# )
+# def joined_processor(bot, update, state):
+#     state.update_memory({
+#         'joinedGroup' : True
+#     })
+#     bot.sendMessage(update.get_chat().get_id(), "Welcome to our group")
