@@ -31,7 +31,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'farmfinance.herokuapp.com',
-    'farmfinance.trade',
+    'farmfinance.trade'
+    'www.farmfinance.trade',
 ]
 
 
