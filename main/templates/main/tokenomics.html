@@ -17,12 +17,12 @@
   <!-- ===============================================-->
   <!--    Favicons-->
   <!-- ===============================================-->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/logo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/logo.png">
   <link rel="manifest" href="assets/img/favicons/manifest.json">
-  <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+  <meta name="msapplication-TileImage" content="assets/img/icons/logo.png">
   <meta name="theme-color" content="#ffffff">
 
 
@@ -30,6 +30,66 @@
   <!--    Stylesheets-->
   <!-- ===============================================-->
   <link href="assets/css/theme.css" rel="stylesheet" />
+
+  <!-- Charts API  -->
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Token Allocation');
+      data.addColumn('number', 'Amount');
+      data.addRows([
+        ['Token Sales', 1500000],
+        ['Airdrop', 200000 ],
+        ['Marketing and Publicity', 100000 ],
+        ['Partnership', 100000 ],
+        ['Team', 50000 ],
+        ['Community and Charity', 50000 ]
+      ]);
+
+      var formatterK = new google.visualization.NumberFormat(
+        { suffix: ' FAFI', negativeColor: 'red', negativeParens: true, fractionDigits : 0 });
+
+
+        // var formatterM = new google.visualization.NumberFormat(
+        // { suffix: 'M', negativeColor: 'red', negativeParens: true });
+
+      // formatterK.format(data, 0);
+      formatterK.format(data, 1);
+
+
+
+      // Set chart options
+      var options = {
+        'title': 'Tokenomics Pie Chart',
+        'width': 1200,
+        'height': 1200,
+        'is3D': true,
+        'legend': 'left',
+        'allow_html' : true,
+        'colors': ['#84DAEB', '#2CBFDD', '#1A889E', '#115B69', '#0F4A57'].reverse(),
+
+
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
 
 </head>
 
@@ -326,7 +386,7 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                           
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract deployment</p>
@@ -340,7 +400,7 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                           
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Airdrop</p>
@@ -354,7 +414,7 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                           
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Seed sale</p>
@@ -365,7 +425,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="carousel-item">
                 <div class="row h-100">
                   <div class="col-md-4 mb-3 mb-md-0">
@@ -373,7 +433,7 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                          
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Contract Audit</p>
@@ -387,7 +447,7 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                            
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Marketing and partnerships</p>
@@ -401,13 +461,13 @@
                       <div class="card-body my-2">
                         <div class="d-flex align-items-center">
                           <div class="flex-1 align-items-center">
-                            
+
                           </div>
                         </div>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Website update</p>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">MVP testnet</p>
                         <p class="card-text ps-7 ps-md-0 ps-xl-7 pt-md-4 pt-lg-3 pt-xl-0">Exchange listing decision by community</p>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -427,6 +487,13 @@
           </div>
         </div>
       </section> -->
+
+
+    <section class="py-6 pb-0 w3-center">
+      <div id='chart_div'>
+
+      </div>
+    </section>
 
 
     <!-- ============================================-->
