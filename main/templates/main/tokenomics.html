@@ -53,19 +53,19 @@
       data.addColumn('number', 'Amount');
       data.addRows([
         ['Token Sales', 1500000],
-        ['Airdrop', 200000 ],
-        ['Marketing and Publicity', 100000 ],
-        ['Partnership', 100000 ],
-        ['Team', 50000 ],
-        ['Community and Charity', 50000 ]
+        ['Airdrop', 200000],
+        ['Marketing and Publicity', 100000],
+        ['Partnership', 100000],
+        ['Team', 50000],
+        ['Community and Charity', 50000]
       ]);
 
       var formatterK = new google.visualization.NumberFormat(
-        { suffix: ' FAFI', negativeColor: 'red', negativeParens: true, fractionDigits : 0 });
+        { suffix: ' FAFI', negativeColor: 'red', negativeParens: true, fractionDigits: 0 });
 
 
-        // var formatterM = new google.visualization.NumberFormat(
-        // { suffix: 'M', negativeColor: 'red', negativeParens: true });
+      // var formatterM = new google.visualization.NumberFormat(
+      // { suffix: 'M', negativeColor: 'red', negativeParens: true });
 
       // formatterK.format(data, 0);
       formatterK.format(data, 1);
@@ -74,19 +74,19 @@
 
       // Set chart options
       var options = {
-        'title': 'Tokenomics Pie Chart',
-        'width': 1200,
-        'height': 1200,
+        'title': 'Tokenomics Chart',
+        'width': '500',
+        'height': '500',
         'is3D': true,
-        'legend': 'left',
-        'allow_html' : true,
-        'colors': ['#84DAEB', '#2CBFDD', '#1A889E', '#115B69', '#0F4A57'].reverse(),
+        'legend': 'top',
+        'allow_html': true,
+        'colors': ['#84DAFF', '#2CBFED', '#1A889E', '#115B69', '#0F4A57'].reverse(),
 
 
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.PieChart(document.getElementById('charts'));
       chart.draw(data, options);
     }
   </script>
@@ -101,8 +101,9 @@
   <!-- ===============================================-->
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
-      <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/icons/logo.png"
-            alt="" /></a>
+      <div class="container"><a class="navbar-brand" href="http://{{host}}"><img
+            style='border:1px solid transparent;border-radius: 50%;' height="70" width="70" class="img-fluid"
+            src="assets/img/icons/logo.png" alt="" /></a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -184,7 +185,7 @@
           <div class="col-auto text-center my-4">
             <h1 class="mb-4 fw-bolder" id="fet"> Token </h1>
             <p>
-              FAFI token which is the native utility token of the ecosystem wil have lots of utility purposes.
+              FAFI token is the native utility token of the Farm Finance ecosystem.
             </p>
           </div>
         </div>
@@ -193,12 +194,12 @@
             <div class="card px-5 px-md-3 py-lg-5">
               <div class="row flex-center">
                 <div class="bg-holder z-index-1 d-none d-lg-block"
-                  style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:contain;">
+                  style="background-image:url(assets/img/illustrations/feature-bgf-1.png);background-position:right bottom;background-size:cover;">
                 </div>
                 <!--/.bg-holder-->
 
                 <div class="bg-holder z-index-1 d-block d-lg-none"
-                  style="background-image:url(assets/img/illustrations/feature-bg-1.png);background-position:center;background-size:cover;">
+                  style="background-image:url(assets/img/illustrations/feature-bgr-1.png);background-position:right bottom;background-size:cover;">
                 </div>
                 <!--/.bg-holder-->
 
@@ -210,22 +211,22 @@
                     <p class="mb-0"> <br class="d-none d-lg-block">
                       Hodlers and any third party interested in using any of our services will
                       be able to pay for fees on any of our DeFi platforms with our native token.
-                      be able to pay for fees on any of our DeFi platforms with our native token.
+
                     </p>
                     <br>
                     <p>In addition to this, FAFI holders will have first access to new innovations coming
                       into the binance smart chain network using any of our services(Holders have access to IDO's and
                       presales
-                      of new projects using our Launchpad) </p>
-                    <div>
-                      <!-- <a class="btn btn-lg ps-0 pe-3" href="#" role="button">Learn more</a> -->
+                      of new projects ahead of time.) </p>
+                    <!-- <div>
+                      <a class="btn btn-lg ps-0 pe-3" href="#" role="button">Learn more</a>
                       <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="#9C69E2" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
                         </path>
                       </svg>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -251,10 +252,10 @@
                     <h4 class="card-title pt-md-5">Governance </h4>
                     <p class="mb-0">Governance tokens confer holders the right to influence decisions concerning the
                       protocol,
-                      product or feature roadmap,hiring and staffing,and changes that shapes Farm Finance.
+                      product or feature roadmap,hiring and staffing,and changes that shapes system.
                     <div>
                       <br>
-                      <p class="mb-0">Governance tokens confer holders the right to influence decisions concerning the
+                      <p class="mb-0">FAFI tokens holders have the right to influence decisions concerning the
                         protocol,
                         product or feature roadmap,hiring and staffing,and changes that shapes Farm Finance.
                       </p>
@@ -290,7 +291,7 @@
                   <div class="card-body px-0">
                     <h4 class="card-title pt-md-5"> Liquidity Mining and Rewards </h4>
                     <p class="mb-0">
-                      Liquidity Mining, also known as Yield Mining, is an act of providing liquidity via crptoassets to
+                      Liquidity Mining, also known as Yield Mining, is an act of providing liquidity via cryptoassets to
                       decentralized exchanges( DEXs ) in return for a share of fees charged by Automated Market Makers
                       from those
                       who trade or swap tokens on the DEX.
@@ -298,17 +299,18 @@
                     <br>
                     <br>
                     <P>
-                      FAFI holders will be able to stake and and rewards for providing liquidity Pool tokens accross
-                      DEXs we are listed.
+                      FAFI holders will be able to stake and earn rewards for providing liquidity Pool tokens accross
+                      DEXs platform.
                     </P>
-                    <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                    <!-- <div>
+                      <a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
                       <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="#9C69E2" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
                         </path>
                       </svg>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -336,8 +338,8 @@
                       Total supply : &nbsp; <span style="font-size:115%;color:rgb(11, 189, 41)" class="fw-bold "> 2M
                         FAFI </span>
                       <br>
-                      Seed, Private and Public Sales : <span style="font-size:115%;color:rgb(11, 189, 41)"
-                        class="fw-bold "> 1.5M FAFI </span>
+                      Token Sales : <span style="font-size:115%;color:rgb(11, 189, 41)" class="fw-bold "> 1.5M FAFI
+                      </span>
                       <br>
                       Airdrop : <span style="font-size:115%;color:rgb(11, 189, 41)" class="fw-bold "> 200K FAFI </span>
                       <br>
@@ -353,14 +355,14 @@
                         FAFI </span>
                       <br><br>
                     </p>
-                    <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
+                    <!-- <div><a class="btn btn-lg ps-0 pe-3" href="http://{{host}}" role="button">Learn more</a>
                       <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="#9C69E2" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
                         </path>
                       </svg>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -489,8 +491,8 @@
       </section> -->
 
 
-    <section class="py-6 pb-0 w3-center">
-      <div id='chart_div'>
+    <section style='margin:auto;' class="w3-center w3-container ">
+      <div id='charts'>
 
       </div>
     </section>

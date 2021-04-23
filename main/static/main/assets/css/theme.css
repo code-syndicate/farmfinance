@@ -307,8 +307,11 @@ th {
   border-width: 0;
 }
 .bg{
-  background-image: url(../img/illustrations/cover.jpg);
+  /* background-image: url(../img/illustrations/jetman.gif); */
+  background-image: url(../img/illustrations/farmer.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
 }
 label {
   display: inline-block;
