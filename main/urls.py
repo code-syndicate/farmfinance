@@ -9,8 +9,9 @@ app_name = 'main'
 urlpatterns = [
 
     path('', views.IndexView, name = 'indexview'),
+    path('welcome/', views.IndexView, name = 'indexview'),
     path('tokenomics/', views.TokenomicsView, name = 'tokenomics'),
     path('farmfinancebot/', include(farmfinancebot_urls)),
-    
+
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
